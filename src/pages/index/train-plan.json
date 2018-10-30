@@ -1,0 +1,105 @@
+{
+  "trainPlan": "培训计划",
+  "data": [
+    {
+      "type": "前端&可视化",
+      "details": [
+        {
+          "theme": "可视化canvas系列01",
+          "tranier": "朱润亚",
+          "time": "2018/10/24",
+          "place": "大会议室",
+          "content": "1、可视化基础知识介绍。2、canvas、zrender.js、p5.js介绍。",
+          "trainType": "可视化",
+          "imgurl": "./static/img/trainPlan/canvas.jpeg",
+          "keyword": "zrender，p5",
+          "status": true,
+          "docurl": "https://github.com/zhu18/Train",
+          "videourl": ""
+        },
+        {
+          "theme": "可视化图表（1-3）",
+          "tranier": "张涛，周志国，胡杰",
+          "time": "未定",
+          "place": "大会议室",
+          "content": "暂无",
+          "trainType": "可视化",
+          "imgurl": "",
+          "keyword": "",
+          "status": false,
+          "docurl": "",
+          "videourl": ""
+        },
+        {
+          "theme": "可视化svg系列02",
+          "tranier": "朱润亚",
+          "time": "未定",
+          "place": "大会议室",
+          "content": "暂无",
+          "trainType": "可视化",
+          "imgurl": "",
+          "keyword": "D3，vivus",
+          "status": false,
+          "docurl": "",
+          "videourl": ""
+        },
+        {
+          "theme": "可视化webgl系列03",
+          "tranier": "朱润亚",
+          "time": "未定",
+          "place": "大会议室",
+          "content": "暂无",
+          "trainType": "可视化",
+          "imgurl": "",
+          "keyword": "three,babylon,tween,GSAP",
+          "status": false,
+          "docurl": "",
+          "videourl": ""
+        },
+        {
+          "theme": "github-travis 自动化",
+          "tranier": "邢玮",
+          "time": "2018/10/23",
+          "place": "大会议室",
+          "content": "1、什么是持续集成。2、什么是持续集成。3、操作步骤。",
+          "trainType": "Devops",
+          "imgurl": "./static/img/trainPlan/travis.jpeg",
+          "keyword": "github，travis",
+          "status": true,
+          "docurl": "https://xingwgithub.github.io/2018/10/23/Travis-CI%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/",
+          "videourl": "http://v.youku.com/v_show/id_XMzg4NzAzNjMwNA==.html?spm=a2h3j.8428770.3416059.1"
+        },
+        {
+          "theme": "karma+mocha 自动化测试-单元测试 ",
+          "tranier": "唐明芳",
+          "time": "2018/10/23",
+          "place": "大会议室",
+          "content": "1、karma与mocha的简介。2、安装配置。",
+          "trainType": "Devops",
+          "imgurl": "./static/img/trainPlan/karma.jpeg",
+          "keyword": "karma，mocha",
+          "status": true,
+          "docurl": "https://github.com/UnicomBigData/test/blob/master/karma%2Bmocha%E5%AE%9E%E7%8E%B0vue%2Bwebpack%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.md",
+          "videourl": ""
+        },
+        {
+          "theme": "selenium-webdriver",
+          "tranier": "唐明芳",
+          "time": "2018/10/23",
+          "place": "大会议室",
+          "content": "1、安装配置。2、编写测试脚本。",
+          "trainType": "Devops",
+          "imgurl": "./static/img/trainPlan/selenium.jpeg",
+          "keyword": "selenium，webdriver",
+          "status": true,
+          "docurl": "https://github.com/UnicomBigData/test/blob/master/selenium-webdriver%E5%AE%9E%E7%8E%B0webpack%E9%A1%B9%E7%9B%AE%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95.md",
+          "videourl": ""
+        }
+      ]
+    },
+    {
+      "type": "后台",
+      "details": []
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "desc": "技术方向",
+  "items": [
+    {
+      "name": "前端&可视化",
+      "index": 0,
+      "standards": [
+        {
+          "name": "HTML规范",
+          "summary": "基于W3C、苹果开发者等官方文档，并结合团队日常业务需求以及团队在日常开发过程中总结提炼出的经验而约定。",
+          "url": "https://jusfoun-fe.github.io/guide/docs/html/code.html",
+          "iconClass": "icon-html"
+        },
+        {
+          "name": "CSS规范",
+          "summary": "统一团队 CSS 代码书写和 SASS的语法风格，提供媒体查询语句和浏览器私有属性引用，从业务层面统一规范常用模块的引用。",
+          "url": "https://jusfoun-fe.github.io/guide/docs/css/code.html",
+          "iconClass": "icon-css3"
+        },
+        {
+          "name": "JavaScript 规范",
+          "summary": "统一团队的 JS 语法风格和书写习惯，减少程序出错的概率，其中也包含了 ES6 的语法规范和最佳实践。 ",
+          "url": "https://jusfoun-fe.github.io/guide/docs/js/language.html",
+          "iconClass": "icon-logo-javascript"
+        },
+        {
+          "name": "图片规范",
+          "summary": "了解各种图片格式特性，根据特性制定图片规范，包括但不限于图片的质量约定、图片引入方式、图片合并处理等。",
+          "url": "https://jusfoun-fe.github.io/guide/docs/image/format.html",
+          "iconClass": "icon-tupian"
+        },
+        {
+          "name": "命名规范",
+          "summary": "从 “目录命名”、“图片命名”、“ClassName” 命名等层面约定规范团队的命名习惯，增强团队代码的可读性。 ",
+          "url": "https://jusfoun-fe.github.io/guide/docs/name/dir.html",
+          "iconClass": "icon-zhongmingming"
+        },
+        {
+          "name": "前端解决方案",
+          "summary": "提供通用PC、移动端模板，模板包括：基本模板、GULP、Webpack、Vue....",
+          "url": "https://jusfoun-fe.github.io/guide/docs/project/all.html",
+          "iconClass": "icon-jiejuefangan"
+        }
+      ],
+      "relativeTechs": [
+        {
+          "name": "CSS",
+          "iconClass": "icon-css3",
+          "items": [
+            {
+              "name": "bootstrap",
+              "url": "http://www.bootcss.com/"
+            },
+            {
+              "name": "iconfont",
+              "url": "http://www.iconfont.cn/"
+            },
+            {
+              "name": "less",
+              "url": "http://less.bootcss.com/features/"
+            },
+            {
+              "name": "sass",
+              "url": "https://www.sass.hk/"
+            }
+          ]
+        },
+        {
+          "name": "JS",
+          "iconClass": "icon-logo-javascript",
+          "items": [
+            {
+              "name": "jquery",
+              "url": "http://jquery.cuishifeng.cn/"
+            },
+            {
+              "name": "Vue",
+              "url": "https://cn.vuejs.org/"
+            },
+            {
+              "name": "React",
+              "url": "https://github.com/angular/angular.js/"
+            },
+            {
+              "name": "Node.js",
+              "url": "http://www.expressjs.com.cn/"
+            },
+            {
+              "name": "lodash",
+              "url": "https://lodash.com/"
+            },
+            {
+              "name": "D3",
+              "url": "https://d3js.org/"
+            },
+            {
+              "name": "D3",
+              "url": "http://www.ractivejs.org/"
+            },
+            {
+              "name": "requirejs",
+              "url": "http://www.requirejs.cn/"
+            }
+          ]
+        },
+        {
+          "name": "构建",
+          "iconClass": "icon-oper-auto",
+          "items": [
+            {
+              "name": "webpack",
+              "url": ""
+            },
+            {
+              "name": "gulp",
+              "url": ""
+            },
+            {
+              "name": "grunt",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "name": "其它",
+          "iconClass": "icon-qita",
+          "items": [
+            {
+              "name": "Echarts",
+              "url": ""
+            },
+            {
+              "name": "Highcharts",
+              "url": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "算法",
+      "index": 1,
+      "standards": [
+        {
+          "name": "算法技术规范test",
+          "summary": "这是算法技术规范的一个测试例子",
+          "url": "",
+          "iconClass": "icon-zhinengsuanfa"
+        }
+      ],
+      "relativeTechs": [
+        {
+          "name": "分词",
+          "iconClass": "icon-biaoqian",
+          "items": [
+            {
+              "name": "Jieba分词",
+              "url": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "数据处理",
+      "index": 2,
+      "standards": [
+        {
+          "name": "数据处理规范test",
+          "summary": "这是数据处理技术规范的一个测试例子",
+          "url": "",
+          "iconClass": "icon-shuju"
+        }
+      ],
+      "relativeTechs": [
+        {
+          "name": "索引",
+          "iconClass": "icon-suoyinguanli",
+          "items": [
+            {
+              "name": "solr",
+              "url": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "后台",
+      "index": 3,
+      "standards": [
+        {
+          "name": "Java技术规范",
+          "summary": "这是Java技术规范的一个测试例子",
+          "url": "",
+          "iconClass": "icon-houtai4"
+        }
+      ]
+    }
+  ]
+}
