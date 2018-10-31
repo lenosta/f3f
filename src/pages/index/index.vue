@@ -205,10 +205,10 @@
                     </div>
                     <div class="copyright ">
                         <div class="row">
-                            <div class="col-lg-7 col-md-5 col-sm-12 col-xs-12"><p class="copyright-left">版权所有 联通大数据有限公司技术部</p>
+                            <div class="col-lg-7 col-md-5 col-sm-12 col-xs-12"><p class="copyright-left">版权所有 智慧大数据</p>
                             </div>
                             <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12"><p class="copyright-right">
-                                Copyright 2018 by UnicomBigData.com All Right Reserved</p></div>
+                                Copyright©️2018 BigDataSmart All Rights Reserved</p></div>
                         </div>
                     </div>
                 </div>

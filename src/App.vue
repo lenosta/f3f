@@ -22,7 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span><span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><i class="iconfont icon-icon_LOGO"></i>联通大数据-技术部</a>
+          <a class="navbar-brand" href="/"><i class="iconfont icon-icon_LOGO"></i>智慧大数据</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
