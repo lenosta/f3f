@@ -94,10 +94,6 @@
               "url": "https://d3js.org/"
             },
             {
-              "name": "D3",
-              "url": "http://www.ractivejs.org/"
-            },
-            {
               "name": "requirejs",
               "url": "http://www.requirejs.cn/"
             }
@@ -109,15 +105,15 @@
           "items": [
             {
               "name": "webpack",
-              "url": ""
+              "url": "https://www.webpackjs.com/"
             },
             {
               "name": "gulp",
-              "url": ""
+              "url": "https://www.gulpjs.com.cn/"
             },
             {
               "name": "grunt",
-              "url": ""
+              "url": "https://www.gruntjs.net/"
             }
           ]
         },
@@ -127,73 +123,13 @@
           "items": [
             {
               "name": "Echarts",
-              "url": ""
+              "url": "http://echarts.baidu.com/"
             },
             {
               "name": "Highcharts",
-              "url": ""
+              "url": "http://www.hcharts.cn/"
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "算法",
-      "index": 1,
-      "standards": [
-        {
-          "name": "算法技术规范test",
-          "summary": "这是算法技术规范的一个测试例子",
-          "url": "",
-          "iconClass": "icon-zhinengsuanfa"
-        }
-      ],
-      "relativeTechs": [
-        {
-          "name": "分词",
-          "iconClass": "icon-biaoqian",
-          "items": [
-            {
-              "name": "Jieba分词",
-              "url": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "数据处理",
-      "index": 2,
-      "standards": [
-        {
-          "name": "数据处理规范test",
-          "summary": "这是数据处理技术规范的一个测试例子",
-          "url": "",
-          "iconClass": "icon-shuju"
-        }
-      ],
-      "relativeTechs": [
-        {
-          "name": "索引",
-          "iconClass": "icon-suoyinguanli",
-          "items": [
-            {
-              "name": "solr",
-              "url": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "后台",
-      "index": 3,
-      "standards": [
-        {
-          "name": "Java技术规范",
-          "summary": "这是Java技术规范的一个测试例子",
-          "url": "",
-          "iconClass": "icon-houtai4"
         }
       ]
     }

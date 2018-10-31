@@ -22,7 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span><span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><i class="iconfont icon-liantonglogo"></i>联通大数据-技术部</a>
+          <a class="navbar-brand" href="/"><i class="iconfont icon-icon_LOGO"></i>联通大数据-技术部</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,9 +34,9 @@
                 <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
               </svg>
             </li>
-            <li>
-              <a  class="navbar-li" href="#tech-standard" data-href="tech-standard">技术规范</a>
-              <svg class="ripple-obj">
+            <li  id="navBtn">
+              <a  class="navbar-li" href="#relative-tech"  data-href="relative-tech">相关技术</a>
+              <svg class="ripple-obj" id="js-ripple">
                 <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
               </svg>
             </li>
@@ -52,12 +52,13 @@
                 <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
               </svg>
             </li>
-            <li  id="navBtn">
-              <a  class="navbar-li" href="#relative-tech"  data-href="relative-tech">相关技术</a>
-              <svg class="ripple-obj" id="js-ripple">
+            <li>
+              <a  class="navbar-li" href="#tech-subside" data-href="tech-subside">技术沉淀</a>
+              <svg class="ripple-obj">
                 <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
               </svg>
             </li>
+
             <li>
               <a  class="navbar-li" href="#team"  data-href="team">团队介绍</a>
               <svg class="ripple-obj" id="js-ripple">
@@ -124,8 +125,9 @@
     border-color: rgba(231, 231, 231, 0.1);
     transition: all 0.8s;
     .navbar-brand {
+
       padding: 0 0 0 15px;
-      line-height: 44px;
+      line-height: 50px;
       color: #fff;
       cursor: pointer;
 
@@ -207,7 +209,8 @@
     }
   }
   .navbar-brand  {
-    .icon-liantonglogo {
+    .iconfont {
+      float: left;
       font-size: 26px;
       margin-right: 10px;
     }

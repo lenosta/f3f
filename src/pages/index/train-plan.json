@@ -70,7 +70,7 @@
           "videourl": "http://v.youku.com/v_show/id_XMzg4NzAzNjMwNA==.html?spm=a2h3j.8428770.3416059.1"
         },
         {
-          "theme": "karma+mocha 自动化测试-单元测试 ",
+          "theme": "karma+mocha单元测试 ",
           "tranier": "唐明芳",
           "time": "2018/10/23",
           "place": "大会议室",
@@ -80,10 +80,10 @@
           "keyword": "karma，mocha",
           "status": true,
           "docurl": "https://github.com/UnicomBigData/test/blob/master/karma%2Bmocha%E5%AE%9E%E7%8E%B0vue%2Bwebpack%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.md",
-          "videourl": ""
+          "videourl": "http://v.youku.com/v_show/id_XMzg5NDc3Nzc2NA==.html"
         },
         {
-          "theme": "selenium-webdriver",
+          "theme": "selenium-webdriver自动化测试",
           "tranier": "唐明芳",
           "time": "2018/10/23",
           "place": "大会议室",
@@ -93,7 +93,7 @@
           "keyword": "selenium，webdriver",
           "status": true,
           "docurl": "https://github.com/UnicomBigData/test/blob/master/selenium-webdriver%E5%AE%9E%E7%8E%B0webpack%E9%A1%B9%E7%9B%AE%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95.md",
-          "videourl": ""
+          "videourl": "http://v.youku.com/v_show/id_XMzg5NDc3Nzc0NA==.html"
         }
       ]
     },

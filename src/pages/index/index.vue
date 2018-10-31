@@ -5,37 +5,40 @@
             <!--<a href="" class="fa fa-angle-down page-scroll"></a>-->
             <!--</div>-->
         </header>
-        <section id="tech-standard" class="sblock sblock-gray  text-center">
+        <section id="relative-tech" class="sblock sblock-gray text-center">
             <div class="container">
-                <h1 class="section-title"><span>技术规范</span></h1>
-                <div class="tech-wrapper">
+                <h1 class="section-title"><span>相关技术</span></h1>
+                <div class="relative-wrapper">
                     <div class="cat">
                         <ul>
-                            <li v-for="item in techCategories" :class="{active:standardTechIndex===item.index}"
-                                @click="standardTechIndex=item.index">
+                            <li v-for="item in techCategories" :class="{active:relativeTechIndex===item.index}"
+                                @click="relativeTechIndex=item.index">
                                 {{item.name}}
                             </li>
                         </ul>
                     </div>
-                    <transition-group name="animated slideInDown">
-                        <div v-show="show0" class="row show-transition" v-for="(parentItem, index) in techCategories[standardTechIndex].standards" :key="index">
-                            <div class="col-lg-4 col-md-4 tech-block animated fadeIn"
-                                 v-for="item in parentItem">
-                                <a :href="item.url" target="_blank">
+                    <transition-group name="animated zoomIn">
+                        <div class="show-wrapper" key="relative">
+                            <div v-show="show0" class="row show-transition" v-for="(parentItem, index) in techCategories[relativeTechIndex].relativeTechs" :key="index">
+                                <div class="col-md-4 tech-block inline animated fadeInUp"
+                                     v-for="item in parentItem">
                                     <div class="icon">
                                         <i class="iconfont" :class="item.iconClass"></i>
                                     </div>
+                                    <div class="title">{{item.name}}</div>
                                     <div class="content">
-                                        <div class="title">{{item.name}}</div>
-                                        <p>{{item.summary}}</p>
+                                <span v-for="child in item.items"><a :href="child.url"
+                                                                     target="_blank">{{child.name}}</a></span>
                                     </div>
-                                </a>
+
+                                </div>
                             </div>
                         </div>
                     </transition-group>
                 </div>
             </div>
         </section>
+
         <section id="train-plan" class="sblock   text-center">
             <div class="container">
                 <h1 class="section-title"><span>培训计划</span></h1>
@@ -49,25 +52,27 @@
                     </div>
                     <div class="train-list-wrapper">
                         <transition-group name="animated slideInDown">
-                            <div  v-show="show1" class="row show-transition"  key="train">
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animated zoomIn"  v-for="item1 in trainArr">
-                                    <div :class="item1.status ? 'train-item' : 'train-item train-item-unfinshed'">
-                                        <div class="train-icon"  v-show="item1.imgurl == ''">
-                                            <i class="iconfont icon-icontianjiatupian"></i>
-                                        </div>
-                                        <div class="train-img"  v-show="item1.imgurl != ''">
-                                            <img :src="item1.imgurl" >
-                                        </div>
-                                        <div class="train-content">
-                                            <p><span>培训人：</span><span>{{item1.tranier}}</span></p>
-                                            <p><span>培训时间：</span><span>{{item1.time}}</span></p>
-                                            <p><span>培训地点：</span><span>{{item1.place}}</span></p>
-                                            <p><span>培训内容：</span><span>{{item1.content}}</span></p>
-                                        </div>
-                                        <a class="train-video" :href="item1.videourl" target="_blank"><i v-show="item1.videourl == ''?false:true" class="iconfont icon-shipin"></i></a>
-                                        <div class="train-theme">
-                                            <p class="theme-text"><a target="_blank" :href="item1.docurl">{{item1.theme}}</a></p>
-                                            <p class="train-other clearfix"><span>{{item1.keyword}}</span><span class="train-status">{{item1.status ? "已完成" : "未开始"}}</span></p>
+                            <div class="show-wrapper" key="train">
+                                <div  v-show="show1" class="row show-transition">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animated zoomIn"  v-for="item1 in trainArr">
+                                        <div :class="item1.status ? 'train-item' : 'train-item train-item-unfinshed'">
+                                            <div class="train-icon"  v-show="item1.imgurl == ''">
+                                                <i class="iconfont icon-icontianjiatupian"></i>
+                                            </div>
+                                            <div class="train-img"  v-show="item1.imgurl != ''">
+                                                <img :src="item1.imgurl" >
+                                            </div>
+                                            <div class="train-content">
+                                                <p><span>培训人：</span><span>{{item1.tranier}}</span></p>
+                                                <p><span>培训时间：</span><span>{{item1.time}}</span></p>
+                                                <p><span>培训地点：</span><span>{{item1.place}}</span></p>
+                                                <p><span>培训内容：</span><span>{{item1.content}}</span></p>
+                                            </div>
+                                            <a class="train-video" :href="item1.videourl" target="_blank"><i v-show="item1.videourl == ''?false:true" class="iconfont icon-shipin"></i></a>
+                                            <div class="train-theme">
+                                                <p class="theme-text"><a target="_blank" :href="item1.docurl">{{item1.theme}}</a></p>
+                                                <p class="train-other clearfix"><span>{{item1.keyword}}</span><span class="train-status">{{item1.status ? "已完成" : "未开始"}}</span></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -90,51 +95,53 @@
                         </ul>
                     </div>
                     <transition-group name="animated slideInDown">
-                    <ul v-show="show2" class="weekly-list-wrapper show-transition" key="weekly">
-                        <li v-for="(item, index) in weeklyArr" :key="index" class="animated fadeInUp">
-                            <p class="weekly-title"><a :href="item.url" target="_blank">{{item.title}}</a></p>
-                            <p class="weekly-outline">{{item.outline}}</p>
-                            <p class="weekly-other clearfix">
-                                <span class="provider-img">
-                                    <i class="iconfont icon-yonghutouxiang"></i>
-                                    <img >
-                                </span>
-                                <span class="provider-name">{{item.provider}}</span>
-                                <span class="weekly-date">{{item.date}}</span>
-                            </p>
-                        </li>
-                    </ul>
+                        <div class="show-wrapper" key="weekly">
+                            <ul v-show="show2" class="weekly-list-wrapper show-transition" >
+                                <li v-for="(item, index) in weeklyArr" :key="index" :class="index % 2 == 0 ? 'animated fadeInLeft' : 'animated fadeInRight'">
+                                    <p class="weekly-title"><a :href="item.url" target="_blank">{{item.title}}</a></p>
+                                    <p class="weekly-outline">{{item.outline}}</p>
+                                    <p class="weekly-other clearfix">
+                                        <span class="provider-img">
+                                            <i class="iconfont icon-yonghutouxiang"></i>
+                                            <img >
+                                        </span>
+                                        <span class="provider-name">{{item.provider}}</span>
+                                        <span class="weekly-date">{{item.date}}</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
                     </transition-group>
                 </div>
             </div>
         </section>
-        <section id="relative-tech" class="sblock  text-center">
+        <section id="tech-subside" class="sblock   text-center">
             <div class="container">
-                <h1 class="section-title"><span>相关技术</span></h1>
-                <div class="relative-wrapper">
+                <h1 class="section-title"><span>技术沉淀</span></h1>
+                <div class="tech-wrapper">
                     <div class="cat">
                         <ul>
-                            <li v-for="item in techCategories" :class="{active:relativeTechIndex===item.index}"
-                                @click="relativeTechIndex=item.index">
-                                {{item.name}}
+                            <li v-for="(item, index) in subsideBtn" :class="{active:subsideIndex===index}">
+                                {{item}}
                             </li>
                         </ul>
                     </div>
-                    <transition-group name="animated zoomIn">
-                    <div v-show="show3" class="row show-transition" v-for="(parentItem, index) in techCategories[relativeTechIndex].relativeTechs" :key="index">
-                        <div class="col-md-4 tech-block inline animated fadeInDown"
-                             v-for="item in parentItem">
-                            <div class="icon">
-                                <i class="iconfont" :class="item.iconClass"></i>
+                    <transition-group name="animated slideInDown">
+                        <div class="show-wrapper" key="subside">
+                            <div v-show="show3" class="row subside-list-wrapper show-transition " >
+                                <div v-for="(item, index) in subsideArr" :key="index" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animated zoomIn">
+                                    <div class="subside-top text-center">
+                                        <p class="subside-icon"><i class="iconfont" :class="item.icon"></i></p>
+                                        <h2 class="subside-name">{{item.name}}</h2>
+                                    </div>
+                                    <div class="subside-bottom">
+                                        <ul v-for="item1 in item.children" class="text-center">
+                                            <li v-for="item2 in item1"><a :href="item2.url">{{item2.name}}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="title">{{item.name}}</div>
-                            <div class="content">
-                                <span v-for="child in item.items"><a :href="child.url"
-                                                                     target="_blank">{{child.name}}</a></span>
-                            </div>
-
                         </div>
-                    </div>
                     </transition-group>
                 </div>
             </div>
@@ -158,22 +165,24 @@
                             </li>
                         </ul>
                         <transition-group name="animated slideInDown">
-                        <div v-show="show4" id="teamListWrapper" class="team-list-wrapper clearfix show-transition" :style="{height: height+'px'}" key="teamListWrapper">
-                            <ul id="teamList" class="team-list clearfix">
-                                <li :class="item.className" v-for="(item, index) in teamArr">
-                                    <a href="#">
-                                        <div class="spinner"></div>
-                                        <div class="team-img"><i v-show="item.imgurl == ''" class="iconfont icon-yonghutouxiang"></i><img v-show="item.imgurl" :src="item.imgurl"></div>
-                                        <div class="team-content">
-                                            <p>
-                                                <span class="team-name">{{item.name}}</span>
-                                                <span class="team-des">{{item.des}}</span>
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                            <div class="show-wrapper" key="team">
+                                <div v-show="show4" id="teamListWrapper" class="team-list-wrapper clearfix show-transition" :style="{height: height+'px'}" >
+                                    <ul id="teamList" class="team-list clearfix">
+                                        <li :class="item.className" v-for="(item, index) in teamArr">
+                                            <a href="#">
+                                                <div class="spinner"></div>
+                                                <div class="team-img"><i v-show="item.imgurl == ''" class="iconfont icon-yonghutouxiang"></i><img v-show="item.imgurl" :src="item.imgurl"></div>
+                                                <div class="team-content">
+                                                    <p>
+                                                        <span class="team-name">{{item.name}}</span>
+                                                        <span class="team-des">{{item.des}}</span>
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </transition-group>
                     </div>
                 </div>
@@ -214,6 +223,7 @@
     import contract from './contract'
     import trainPlan from './train-plan.json'
     import weekly from './technical-weekly.json'
+    import subside from './tech-subside.json'
     export default {
         name: 'index',
         data() {
@@ -253,16 +263,21 @@
                   show2: false,
                   show3: false,
                   show4: false,
+              //技术沉淀
+                subsideBtn: [],
+                subsideIndex: 0,
+                subsideArr: []
             }
         },
         mounted() {
-          this.height0 = jQuery("#tech-standard").offset().top;
+          this.height0 = jQuery("#relative-tech").offset().top;
           window.addEventListener('scroll',this.handleScroll,true);
             this.initVanta();
             this.initTeam();
             this.initTechCategories();
             this.initTrainPlan();
             this.initWeekly();
+            this.initSubside();
         },
         components: {},
         methods: {
@@ -282,7 +297,7 @@
                     if(this.height2 - 140 < this.scrollTop){
                       jQuery("#nav li ").eq(3).addClass("active").siblings().removeClass("active");
                       this.show2 = true;
-                      this.height3 = jQuery("#relative-tech").offset().top;
+                      this.height3 = jQuery("#tech-subside").offset().top;
                       if(this.height3 - 140 < this.scrollTop){
                         jQuery("#nav li ").eq(4).addClass("active").siblings().removeClass("active");
                         this.show3 = true;
@@ -417,17 +432,7 @@
                   arr.push(item.type);
                 })
                 this.trainBtn = arr;
-                // 把数组处理为一个二维数组
-                let o_arr = trainArr[0].details;
-                let all_arr = [], current_arr = [];
-                for( let i = 0; i < o_arr.length; i++){
-                  current_arr.push(o_arr[i]);
-                  if((i != 0 && (i + 1) % 3 == 0) || i == o_arr.length - 1) {
-                    all_arr.push(current_arr);
-                    //在这里清空currData
-                    current_arr = [];
-                  }
-                }
+
 //                this.trainArr = all_arr;
                 this.trainArr = trainPlan.data[0].details;
             },
@@ -440,6 +445,35 @@
                 })
                 this.weeklyBtn = arr;
                 this.weeklyArr = weeklyArr[0].details;
+            },
+            //初始化技术沉淀
+            initSubside(){
+                let subsideArr = subside.data;
+                let details = subsideArr[0].details;
+                let arr = [];
+                subsideArr.map(item => {
+                  arr.push(item.type)
+                })
+                this.subsideBtn = arr;
+
+                details.map(item => {
+                  item.children = transformArrToDubble(item.children)
+                })
+                // 把数组处理为一个二维数组
+                function transformArrToDubble(arr){
+                  let o_arr = arr;
+                  let all_arr = [], current_arr = [];
+                  for( let i = 0; i < o_arr.length; i++){
+                    current_arr.push(o_arr[i]);
+                    if((i != 0 && (i + 1) % 3 == 0) || i == o_arr.length - 1) {
+                      all_arr.push(current_arr);
+                      //在这里清空currData
+                      current_arr = [];
+                    }
+                  }
+                  return all_arr;
+                }
+                this.subsideArr = details;
             }
         }
     }
@@ -466,61 +500,6 @@
         color: #cfcfcf;
         position: relative;
         height: 500px;
-    }
-
-    .sblock {
-        padding: 20px 0 80px 0;
-        .section-title {
-            padding: 20px 0;
-            margin-bottom: 40px;
-            font-size: 32px;
-            color: $section-title;
-            text-align: center;
-            span {
-                display: inline-block;
-                line-height: 40px;
-                position: relative;
-                padding: 0 6%;
-                font-weight: normal;
-                &:before {
-                    width: 100%;
-                    height: 1px;
-                    background: #333;
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    content: '';
-                    bottom: -20px;
-                }
-                &:after {
-                    box-sizing: content-box;
-                    display: block;
-                    overflow: hidden;
-                    content: '';
-                    background: #333;
-                    border: 8px solid #fff;
-                    position: absolute;
-                    left: 50%;
-                    width: 8px;
-                    bottom: -32px;
-                    height: 8px;
-                    border-radius: 50%;
-                    margin-left: -12px;
-                }
-            }
-
-        }
-    }
-    .sblock-gray {
-        background: $sblock-gray;
-        .section-title {
-            span {
-                &:after {
-                    border: 8px solid $sblock-gray;
-                }
-            }
-
-        }
     }
     .cat {
         margin: 25px 0;
@@ -572,6 +551,63 @@
             left: 0;
         }
     }
+    .sblock {
+        padding: 20px 0 80px 0;
+        .section-title {
+            padding: 20px 0;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: $section-title;
+            text-align: center;
+            span {
+                display: inline-block;
+                line-height: 40px;
+                position: relative;
+                padding: 0 6%;
+                font-weight: normal;
+                &:before {
+                    width: 100%;
+                    height: 1px;
+                    background: #333;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    content: '';
+                    bottom: -20px;
+                }
+                &:after {
+                    box-sizing: content-box;
+                    display: block;
+                    overflow: hidden;
+                    content: '';
+                    background: #333;
+                    border: 8px solid #fff;
+                    position: absolute;
+                    left: 50%;
+                    width: 8px;
+                    bottom: -32px;
+                    height: 8px;
+                    border-radius: 50%;
+                    margin-left: -12px;
+                }
+            }
+
+        }
+    }
+    .sblock-gray {
+        position: relative;
+        background: #f5f5f6;
+        z-index: -2;
+        .section-title {
+            span {
+                &:after {
+                    border: 8px solid $sblock-gray;
+                }
+            }
+
+        }
+    }
+
 
     .tech-block {
         margin-top: 30px;
@@ -1190,8 +1226,60 @@
             }
         }
     }
+    .show-wrapper {
+        min-height: 300px;
+    }
     .show-transition {
         transition: all .35s;
+    }
+    .subside-list-wrapper {
+        margin-top: 3em;
+        .subside-top {
+            .subside-icon {
+                padding: 10px 0;
+                i {
+                    font-size: 3.2em;
+                    color: #666;
+                }
+            }
+            .subside-name {
+                font-size: 20px;
+                color: #373d41;
+                margin-top: 10px;
+                font-weight: 700;
+            }
+        }
+        .subside-bottom {
+            padding-top: 10px;
+            ul {
+                margin-bottom: 0;
+                li {
+                    position: relative;
+                    display: inline-block;
+                    a {
+                        display: inline-block;
+                        padding: 0 10px;
+                        color: #a9b0b4;
+                        &:hover {
+                            color: $hover;
+                        }
+                    }
+                    &:after{
+                        position: absolute;
+                        top: 3px;
+                        bottom: 5px;
+                        content: '';
+                        width: 1px;
+                        background: #dcddde;
+                    }
+                    &:last-child {
+                        &:after {
+                            background: none;
+                        }
+                    }
+                }
+            }
+        }
     }
     @media screen and (max-width: 768px){
         header {
