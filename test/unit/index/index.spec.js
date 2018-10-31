@@ -7,7 +7,7 @@ describe('Index.vue', () => {
         const Constructor = Vue.extend(Index) // 获得Index组件实例
         const vm = new Constructor().$mount() // 将组件挂在到DOM上
         //断言：DOM中class为hello的元素中的h1元素的文本内容为Welcome to Your Vue.js App
-        expect(vm.$el.querySelector('#tech-standard').querySelector('h1').textContent)
+        expect(vm.$el.querySelector('#tech-subside').querySelector('h1').textContent)
             .to.equal('技术规范')
 
     });
