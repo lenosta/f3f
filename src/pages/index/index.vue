@@ -17,29 +17,27 @@
                             </li>
                         </ul>
                     </div>
-                    <transition-group name="animated zoomIn">
-                        <div class="show-wrapper" key="relative">
-                            <div v-show="show0" class="row show-transition" v-for="(parentItem, index) in techCategories[relativeTechIndex].relativeTechs" :key="index">
-                                <div class="col-md-4 tech-block inline animated fadeInUp"
-                                     v-for="item in parentItem">
-                                    <div class="icon">
-                                        <i class="iconfont" :class="item.iconClass"></i>
-                                    </div>
-                                    <div class="title">{{item.name}}</div>
-                                    <div class="content">
-                                <span v-for="child in item.items"><a :href="child.url"
-                                                                     target="_blank">{{child.name}}</a></span>
-                                    </div>
-
+                    <div class="show-wrapper" key="relative">
+                        <div  class="row" v-for="(parentItem, index) in techCategories[relativeTechIndex].relativeTechs" :key="index">
+                            <div class="col-md-4 tech-block inline"
+                                 v-for="item in parentItem">
+                                <div class="icon">
+                                    <i class="iconfont" :class="item.iconClass"></i>
                                 </div>
+                                <div class="title">{{item.name}}</div>
+                                <div class="content">
+                            <span v-for="child in item.items"><a :href="child.url"
+                                                                 target="_blank">{{child.name}}</a></span>
+                                </div>
+
                             </div>
                         </div>
-                    </transition-group>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="train-plan" class="sblock   text-center">
+        <section id="train-plan" class="sblock  text-center">
             <div class="container">
                 <h1 class="section-title"><span>培训计划</span></h1>
                 <div class="train-wrapper">
@@ -51,33 +49,31 @@
                         </ul>
                     </div>
                     <div class="train-list-wrapper">
-                        <transition-group name="animated slideInDown">
-                            <div class="show-wrapper" key="train">
-                                <div  v-show="show1" class="row show-transition">
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animated zoomIn"  v-for="item1 in trainArr">
-                                        <div :class="item1.status ? 'train-item' : 'train-item train-item-unfinshed'">
-                                            <div class="train-icon"  v-show="item1.imgurl == ''">
-                                                <i class="iconfont icon-icontianjiatupian"></i>
-                                            </div>
-                                            <div class="train-img"  v-show="item1.imgurl != ''">
-                                                <img :src="item1.imgurl" >
-                                            </div>
-                                            <div class="train-content">
-                                                <p><span>培训人：</span><span>{{item1.tranier}}</span></p>
-                                                <p><span>培训时间：</span><span>{{item1.time}}</span></p>
-                                                <p><span>培训地点：</span><span>{{item1.place}}</span></p>
-                                                <p><span>培训内容：</span><span>{{item1.content}}</span></p>
-                                            </div>
-                                            <a class="train-video" :href="item1.videourl" target="_blank"><i v-show="item1.videourl == ''?false:true" class="iconfont icon-shipin"></i></a>
-                                            <div class="train-theme">
-                                                <p class="theme-text"><a target="_blank" :href="item1.docurl">{{item1.theme}}</a></p>
-                                                <p class="train-other clearfix"><span>{{item1.keyword}}</span><span class="train-status">{{item1.status ? "已完成" : "未开始"}}</span></p>
-                                            </div>
+                        <div class="show-wrapper" key="train">
+                            <div  class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"  v-for="item1 in trainArr">
+                                    <div :class="item1.status ? 'train-item' : 'train-item train-item-unfinshed'">
+                                        <div class="train-icon"  v-show="item1.imgurl == ''">
+                                            <i class="iconfont icon-icontianjiatupian"></i>
+                                        </div>
+                                        <div class="train-img"  v-show="item1.imgurl != ''">
+                                            <img :src="item1.imgurl" >
+                                        </div>
+                                        <div class="train-content">
+                                            <p><span>培训人：</span><span>{{item1.tranier}}</span></p>
+                                            <p><span>培训时间：</span><span>{{item1.time}}</span></p>
+                                            <p><span>培训地点：</span><span>{{item1.place}}</span></p>
+                                            <p><span>培训内容：</span><span>{{item1.content}}</span></p>
+                                        </div>
+                                        <a class="train-video" :href="item1.videourl" target="_blank"><i v-show="item1.videourl == ''?false:true" class="iconfont icon-shipin"></i></a>
+                                        <div class="train-theme">
+                                            <p class="theme-text"><a target="_blank" :href="item1.docurl">{{item1.theme}}</a></p>
+                                            <p class="train-other clearfix"><span>{{item1.keyword}}</span><span class="train-status">{{item1.status ? "已完成" : "未开始"}}</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </transition-group>
+                        </div>
                     </div>
 
                 </div>
@@ -94,24 +90,22 @@
                             </li>
                         </ul>
                     </div>
-                    <transition-group name="animated slideInDown">
-                        <div class="show-wrapper" key="weekly">
-                            <ul v-show="show2" class="weekly-list-wrapper show-transition" >
-                                <li v-for="(item, index) in weeklyArr" :key="index" :class="index % 2 == 0 ? 'animated fadeInLeft' : 'animated fadeInRight'">
-                                    <p class="weekly-title"><a :href="item.url" target="_blank">{{item.title}}</a></p>
-                                    <p class="weekly-outline">{{item.outline}}</p>
-                                    <p class="weekly-other clearfix">
-                                        <span class="provider-img">
-                                            <i class="iconfont icon-yonghutouxiang"></i>
-                                            <img >
-                                        </span>
-                                        <span class="provider-name">{{item.provider}}</span>
-                                        <span class="weekly-date">{{item.date}}</span>
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </transition-group>
+                    <div class="show-wrapper" key="weekly">
+                        <ul class="weekly-list-wrapper" >
+                            <li v-for="(item, index) in weeklyArr" :key="index" :class="index % 2 == 0 ? 'weeklyLeft' : 'weeklyRight'">
+                                <p class="weekly-title"><a :href="item.url" target="_blank">{{item.title}}</a></p>
+                                <p class="weekly-outline">{{item.outline}}</p>
+                                <p class="weekly-other clearfix">
+                                    <span class="provider-img">
+                                        <i class="iconfont icon-yonghutouxiang"></i>
+                                        <img >
+                                    </span>
+                                    <span class="provider-name">{{item.provider}}</span>
+                                    <span class="weekly-date">{{item.date}}</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -126,23 +120,21 @@
                             </li>
                         </ul>
                     </div>
-                    <transition-group name="animated slideInDown">
-                        <div class="show-wrapper" key="subside">
-                            <div v-show="show3" class="row subside-list-wrapper show-transition " >
-                                <div v-for="(item, index) in subsideArr" :key="index" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animated zoomIn">
-                                    <div class="subside-top text-center">
-                                        <p class="subside-icon"><i class="iconfont" :class="item.icon"></i></p>
-                                        <h2 class="subside-name">{{item.name}}</h2>
-                                    </div>
-                                    <div class="subside-bottom">
-                                        <ul v-for="item1 in item.children" class="text-center">
-                                            <li v-for="item2 in item1"><a :href="item2.url">{{item2.name}}</a></li>
-                                        </ul>
-                                    </div>
+                    <div class="show-wrapper" key="subside">
+                        <div class="row subside-list-wrapper " >
+                            <div v-for="(item, index) in subsideArr" :key="index" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 subside-item">
+                                <div class="subside-top text-center">
+                                    <p class="subside-icon"><i class="iconfont" :class="item.icon"></i></p>
+                                    <h2 class="subside-name">{{item.name}}</h2>
+                                </div>
+                                <div class="subside-bottom">
+                                    <ul v-for="item1 in item.children" class="text-center">
+                                        <li v-for="item2 in item1"><a :href="item2.url">{{item2.name}}</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </transition-group>
+                    </div>
                 </div>
             </div>
         </section>
@@ -164,26 +156,24 @@
                                 {{item}}
                             </li>
                         </ul>
-                        <transition-group name="animated slideInDown">
-                            <div class="show-wrapper" key="team">
-                                <div v-show="show4" id="teamListWrapper" class="team-list-wrapper clearfix show-transition" :style="{height: height+'px'}" >
-                                    <ul id="teamList" class="team-list clearfix">
-                                        <li :class="item.className" v-for="(item, index) in teamArr">
-                                            <a href="#">
-                                                <div class="spinner"></div>
-                                                <div class="team-img"><i v-show="item.imgurl == ''" class="iconfont icon-yonghutouxiang"></i><img v-show="item.imgurl" :src="item.imgurl"></div>
-                                                <div class="team-content">
-                                                    <p>
-                                                        <span class="team-name">{{item.name}}</span>
-                                                        <span class="team-des">{{item.des}}</span>
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                        <div class="show-wrapper" key="team">
+                            <div id="teamListWrapper" class="team-list-wrapper clearfix show-transition" :style="{height: height+'px'}" >
+                                <ul id="teamList" class="team-list clearfix">
+                                    <li :class="item.className" v-for="(item, index) in teamArr">
+                                        <a href="#">
+                                            <div class="spinner"></div>
+                                            <div class="team-img"><i v-show="item.imgurl == ''" class="iconfont icon-yonghutouxiang"></i><img v-show="item.imgurl" :src="item.imgurl"></div>
+                                            <div class="team-content">
+                                                <p>
+                                                    <span class="team-name">{{item.name}}</span>
+                                                    <span class="team-des">{{item.des}}</span>
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                        </transition-group>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -191,18 +181,7 @@
         <section id="contact" class="sblock sblock-dark text-center">
 
             <div class="container">
-
-                <h1 class="section-title"><span>联系我们</span></h1>
                 <div class="contact-wrapper">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" v-for="item in contractInfos">
-                            <div class="contact-block">
-                                <div class="contact-icon"><i class="iconfont" :class="item.iconClass"></i></div>
-                                <!--<span class="contact-lable">{{item.name}}：</span>-->
-                                <span class="contact-msg">{{item.value}}</span>
-                            </div>
-                        </div>
-                    </div>
                     <div class="copyright ">
                         <div class="row">
                             <div class="col-lg-7 col-md-5 col-sm-12 col-xs-12"><p class="copyright-left">版权所有 智慧大数据</p>
@@ -286,29 +265,25 @@
                 if(0 < this.scrollTop < this.height0){
                 jQuery("#nav li ").eq(0).addClass("active").siblings().removeClass("active");
                 }
-                if(this.height0 - 140  < this.scrollTop) {
+                if(this.height0 -140  < this.scrollTop) {
                   jQuery("#nav li ").eq(1).addClass("active").siblings().removeClass("active");
-                  this.show0 = true;
+                  jQuery("#relative-tech").addClass("relative-tech");
                   this.height1 = jQuery("#train-plan").offset().top;
-                  if(this.height1 - 140 < this.scrollTop){
+                  if(this.height1 -140 < this.scrollTop){
                     jQuery("#nav li ").eq(2).addClass("active").siblings().removeClass("active");
-                    this.show1 = true;
+//                    this.show1 = true;
+                    jQuery("#train-plan").addClass("train-plan");
                     this.height2 = jQuery("#technical-weekly").offset().top;
-                    if(this.height2 - 140 < this.scrollTop){
+                    if(this.height2 -140 < this.scrollTop){
                       jQuery("#nav li ").eq(3).addClass("active").siblings().removeClass("active");
-                      this.show2 = true;
+                      jQuery("#technical-weekly").addClass("technical-weekly");
                       this.height3 = jQuery("#tech-subside").offset().top;
-                      if(this.height3 - 140 < this.scrollTop){
+                      if(this.height3 -140 < this.scrollTop){
                         jQuery("#nav li ").eq(4).addClass("active").siblings().removeClass("active");
-                        this.show3 = true;
+                        jQuery("#tech-subside").addClass("tech-subside");
                         this.height4 = jQuery("#team").offset().top;
                         if(this.height4 - 140 < this.scrollTop){
                           jQuery("#nav li ").eq(5).addClass("active").siblings().removeClass("active");
-                          this.show4 = true;
-                          this.height5 = jQuery("#contact").offset().top;
-                          if(this.height5 - 300  < this.scrollTop){
-                            jQuery("#nav li ").eq(6).addClass("active").siblings().removeClass("active");
-                          }
                         }
                       }
                     }
@@ -427,14 +402,21 @@
             // 初始化培训计划
             initTrainPlan(){
                 let trainArr = trainPlan.data;
-                let arr = [];
+                let dataArr = trainPlan.data[0].details;
+                let btnArr = [], listArr = [];
                 trainArr.map( item => {
-                  arr.push(item.type);
+                  btnArr.push(item.type);
                 })
-                this.trainBtn = arr;
-
-//                this.trainArr = all_arr;
-                this.trainArr = trainPlan.data[0].details;
+                this.trainBtn = btnArr;
+                dataArr.map(item => {
+                    if(item.status){
+                      listArr.push(item);
+                    }
+                })
+                if(listArr.length > 6) {
+                  listArr = listArr.slice(0, 7);
+                }
+                this.trainArr = listArr;
             },
             // 初始化技术周刊
             initWeekly(){
@@ -597,7 +579,7 @@
     .sblock-gray {
         position: relative;
         background: #f5f5f6;
-        z-index: -2;
+        z-index: 1;
         .section-title {
             span {
                 &:after {
@@ -607,67 +589,11 @@
 
         }
     }
-
-
     .tech-block {
-        margin-top: 30px;
+        margin-top: 50px;
         padding: 10px;
-        &:hover {
-            box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1) inset !important;
-        }
-        a {
-            color: #333;
-            text-decoration: none;
-            &:hover {
-                outline: medium none;
-                /*text-decoration: none;*/
-                transition: all .2s ease-out;
-                .content {
-                    color: #333;
-                }
-                .icon {
-                    border: 1px solid #bbb;
-                    i {
-                        color: #666
-                    }
-                ;
-                }
-            }
-        }
-        .icon {
-            float: left;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            font-size: 2em;
-            border-radius: 50%;
-            border: 1px solid #ddd;
-            i {
-                color: #888;
-            }
-        }
-        .content {
-            margin-left: 50px;
-            padding: 0 10px;
-            text-align: left;
-            color: #666;
-            .title {
-                font-size: 18px;
-                font-weight: bold;
-            }
-            p {
-                line-height: 2em;
-            }
-        }
-    }
-
-    .tech-block.inline {
-        margin-top: 30px;
-        padding: 10px;
-        &:hover {
-            box-shadow: none !important;
-        }
+        opacity: 0;
+        transition: all .35s;
         .icon {
             margin: auto;
             float: none;
@@ -680,6 +606,9 @@
             border: 1px solid #ddd;
             i {
                 color: #888;
+            }
+            i.icon-keshihua {
+                font-size: 2.1em;
             }
         }
         .title {
@@ -713,7 +642,12 @@
             }
         }
     }
-
+    .relative-tech {
+        .tech-block {
+            margin-top: 30px;
+            opacity: 1;
+        }
+    }
     .team-filter-btn {
         margin: 25px 0;
         color: $sblock-gray-text;
@@ -916,10 +850,8 @@
         }
 
         .copyright {
-            margin-top: 20px;
             padding: 10px 0;
             color: #73777a;
-            border-top: 1px dashed #666;
             .copyright-left {
                 text-align: left;
             }
@@ -959,6 +891,14 @@
             font-size: 30px;
         }
     }
+    .train-plan {
+        .train-list-wrapper {
+            .train-item {
+                opacity: 1;
+                /*transform: scale(1, 1);*/
+            }
+        }
+    }
     .train-list-wrapper {
         .train-item {
             position: relative;
@@ -967,11 +907,13 @@
             max-height: 360px;
             height: 350px;
             margin-bottom: 20px;
-            background: #2f3238;
+            /*background: rgba(3,150,255 ,1);*/
             cursor: pointer;
             box-shadow: 0 1px 2px $box-shadow;
-            border-radius: 0 0 2px 2px;
-            transition: .3s;
+            border-radius: 4px;
+            opacity: 0;
+            /*transform: scale(0.5, 0.5);*/
+            transition: 1s;
             .train-icon {
                 position:absolute;
                 top: 0;
@@ -996,15 +938,15 @@
                 width: 100%;
                 height: 270px;
                 overflow: hidden;
-
                 img {
                     position: relative;
                     display: block;
                     max-width: none;
                     width: 100%;
                     height: 100%;
-                    transition: opacity 1s,transform 1s;
+                    transition: 1s;
                     backface-visibility: hidden;
+                    filter: brightness(90%);
                     opacity: .9;
                 }
             }
@@ -1050,6 +992,7 @@
                 transform: translate3d(30px,0,0);
                 transition-delay: .2s;
                 .icon-shipin {
+                    color: #ddd;
                     transition: all .3s;
                     font-size: 28px;
                 }
@@ -1087,15 +1030,18 @@
                 }
             }
             &:hover {
+                background: rgba(3,150,255 ,.9);
                 box-shadow: 0 2px 8px $box-shadow-hover;
                 .train-icon {
                     background: #aaa;
                     opacity: 0.3;
+
                 }
                 .train-img {
                     img {
-                        opacity: .3;
+                        opacity: .4;
                         transform: scale3d(1.1,1.1,1);
+                        filter:blur(3px) brightness(30%);
                     }
                 }
                 .train-content {
@@ -1123,7 +1069,7 @@
                     &:hover {
                         .icon-shipin {
 
-                            color: $hover;
+                            color: #fff;
                         }
                     }
                 }
@@ -1158,12 +1104,27 @@
             }
         }
     }
+    .technical-weekly {
+        .weekly-list-wrapper {
+            li {
+                opacity: 1;
+            }
+            li.weeklyLeft {
+                margin-left: 0;
+            }
+            li.weeklyRight {
+                margin-right: 0;
+            }
+        }
+    }
     .weekly-list-wrapper {
         width: 100%;
         li {
             padding: 10px 20px;
             text-align: left;
             border-bottom: 1px dashed rgba(138,138,138, .3);
+            opacity: 0;
+            transition: .35s;
             &:last-child {
                 border: none;
             }
@@ -1225,6 +1186,12 @@
                 }
             }
         }
+        li.weeklyLeft {
+            margin-left: -50px;
+        }
+        li.weeklyRight {
+            margin-right: -50px;
+        }
     }
     .show-wrapper {
         min-height: 300px;
@@ -1232,54 +1199,68 @@
     .show-transition {
         transition: all .35s;
     }
+    .tech-subside {
+        .subside-list-wrapper {
+            .subside-item {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+        }
+    }
     .subside-list-wrapper {
         margin-top: 3em;
-        .subside-top {
-            .subside-icon {
-                padding: 10px 0;
-                i {
-                    font-size: 3.2em;
-                    color: #666;
+        .subside-item {
+            opacity: 0;
+            transform: translate(-50px, 0);
+            transition: 1s;
+            .subside-top {
+                .subside-icon {
+                    padding: 10px 0;
+                    i {
+                        font-size: 3.2em;
+                        color: #666;
+                    }
+                }
+                .subside-name {
+                    font-size: 20px;
+                    color: #373d41;
+                    margin-top: 10px;
+                    font-weight: 700;
                 }
             }
-            .subside-name {
-                font-size: 20px;
-                color: #373d41;
-                margin-top: 10px;
-                font-weight: 700;
-            }
-        }
-        .subside-bottom {
-            padding-top: 10px;
-            ul {
-                margin-bottom: 0;
-                li {
-                    position: relative;
-                    display: inline-block;
-                    a {
+            .subside-bottom {
+                padding-top: 10px;
+                ul {
+                    margin-bottom: 0;
+                    li {
+                        position: relative;
                         display: inline-block;
-                        padding: 0 10px;
-                        color: #a9b0b4;
-                        &:hover {
-                            color: $hover;
+                        a {
+                            display: inline-block;
+                            padding: 0 10px;
+                            color: #a9b0b4;
+                            &:hover {
+                                color: $hover;
+                            }
                         }
-                    }
-                    &:after{
-                        position: absolute;
-                        top: 3px;
-                        bottom: 5px;
-                        content: '';
-                        width: 1px;
-                        background: #dcddde;
-                    }
-                    &:last-child {
-                        &:after {
-                            background: none;
+                        &:after{
+                            position: absolute;
+                            top: 3px;
+                            bottom: 5px;
+                            content: '';
+                            width: 1px;
+                            background: #dcddde;
+                        }
+                        &:last-child {
+                            &:after {
+                                background: none;
+                            }
                         }
                     }
                 }
             }
         }
+
     }
     @media screen and (max-width: 768px){
         header {

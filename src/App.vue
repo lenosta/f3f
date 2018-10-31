@@ -22,7 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span><span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><i class="iconfont icon-icon_LOGO"></i>智慧大数据</a>
+          <a class="navbar-brand" href="/"><i class="iconfont icon-bigdatan"></i>智慧大数据</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -61,12 +61,6 @@
 
             <li>
               <a  class="navbar-li" href="#team"  data-href="team">团队介绍</a>
-              <svg class="ripple-obj" id="js-ripple">
-                <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
-              </svg>
-            </li>
-            <li>
-              <a  class="navbar-li" href="#contact"  data-href="contact">联系我们</a>
               <svg class="ripple-obj" id="js-ripple">
                 <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
               </svg>

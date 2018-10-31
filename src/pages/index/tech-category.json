@@ -48,20 +48,24 @@
           "iconClass": "icon-css3",
           "items": [
             {
-              "name": "bootstrap",
-              "url": "http://www.bootcss.com/"
-            },
-            {
-              "name": "iconfont",
-              "url": "http://www.iconfont.cn/"
-            },
-            {
               "name": "less",
               "url": "http://less.bootcss.com/features/"
             },
             {
               "name": "sass",
               "url": "https://www.sass.hk/"
+            },
+            {
+              "name": "animate",
+              "url": "https://daneden.github.io/animate.css/"
+            },
+            {
+              "name": "Element",
+              "url": "http://element.eleme.io/#/zh-CN"
+            },
+            {
+              "name": "Ant Design",
+              "url": "https://ant.design/"
             }
           ]
         },
@@ -82,16 +86,17 @@
               "url": "https://github.com/angular/angular.js/"
             },
             {
+              "name": "Angular",
+              "url": "https://angularjs.org/"
+            },
+            {
               "name": "Node.js",
               "url": "http://www.expressjs.com.cn/"
             },
+
             {
-              "name": "lodash",
-              "url": "https://lodash.com/"
-            },
-            {
-              "name": "D3",
-              "url": "https://d3js.org/"
+              "name": "ES6",
+              "url": "http://es6.ruanyifeng.com/"
             },
             {
               "name": "requirejs",
@@ -100,7 +105,7 @@
           ]
         },
         {
-          "name": "构建",
+          "name": "自动化",
           "iconClass": "icon-oper-auto",
           "items": [
             {
@@ -108,18 +113,26 @@
               "url": "https://www.webpackjs.com/"
             },
             {
-              "name": "gulp",
+              "name": "Gulp",
               "url": "https://www.gulpjs.com.cn/"
             },
             {
-              "name": "grunt",
+              "name": "Grunt",
               "url": "https://www.gruntjs.net/"
+            },
+            {
+              "name": "Travis CI",
+              "url": "https://travis-ci.org/"
+            },
+            {
+              "name": "Selenium",
+              "url": "https://www.seleniumhq.org/docs/"
             }
           ]
         },
         {
-          "name": "其它",
-          "iconClass": "icon-qita",
+          "name": "可视化",
+          "iconClass": "icon-keshihua",
           "items": [
             {
               "name": "Echarts",
@@ -128,6 +141,18 @@
             {
               "name": "Highcharts",
               "url": "http://www.hcharts.cn/"
+            },
+            {
+              "name": "ZRender",
+              "url": "https://ecomfe.github.io/zrender-doc/public/"
+            },
+            {
+              "name": "D3",
+              "url": "https://d3js.org/"
+            },
+            {
+              "name": "Three",
+              "url": "https://threejs.org/"
             }
           ]
         }
