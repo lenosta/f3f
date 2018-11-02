@@ -5,17 +5,6 @@
       "type": "前端&可视化",
       "details": [
         {
-          "icon": "icon-guifan",
-          "name": "前端规范",
-          "children": [
-            {"name": "HTML","url": "https://jusfoun-fe.github.io/guide/docs/html/code.html"},
-            {"name": "CSS","url": "https://jusfoun-fe.github.io/guide/docs/css/code.html"},
-            {"name": "JavaScript","url": "https://jusfoun-fe.github.io/guide/docs/js/language.html"},
-            {"name": "图片","url": "https://jusfoun-fe.github.io/guide/docs/image/format.html"},
-            {"name": "命名","url": "https://jusfoun-fe.github.io/guide/docs/name/dir.html"}
-          ]
-        },
-        {
           "icon": "icon-daimakuai",
           "name": "代码块&模版",
           "children": [
@@ -33,6 +22,14 @@
           ]
         }
       ]
+    },
+    {
+      "type": "中台&微服务",
+      "details": []
+    },
+    {
+      "type": "模型&机器学习'",
+      "details": []
     }
   ]
 }

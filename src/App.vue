@@ -34,7 +34,13 @@
                 <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
               </svg>
             </li>
-            <li  id="navBtn">
+            <li>
+              <a  class="navbar-li" href="#tech-standard"  data-href="tech-standard">技术规范</a>
+              <svg class="ripple-obj" id="js-ripple">
+                <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
+              </svg>
+            </li>
+            <li>
               <a  class="navbar-li" href="#relative-tech"  data-href="relative-tech">相关技术</a>
               <svg class="ripple-obj" id="js-ripple">
                 <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
@@ -92,7 +98,6 @@
           let height = document.getElementById("home").offsetHeight - 50;
           jQuery('#menu').toggleClass("mine-bar", jQuery(this).scrollTop() > height);
         });
-//        ripplyScott.init('navBtn', 0.75);
       })
       this.navScroll();
     },
@@ -115,16 +120,20 @@
     /*min-width:1280px;*/
   /*}*/
   .navbar-default {
-    background-color: rgba(248, 248, 248, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     border-color: rgba(231, 231, 231, 0.1);
     transition: all 0.8s;
     .navbar-brand {
-
       padding: 0 0 0 15px;
       line-height: 50px;
       color: #fff;
+      font-size: 20px;
       cursor: pointer;
-
+      .iconfont {
+        float: left;
+        font-size: 26px;
+        margin-right: 10px;
+      }
     }
     .navbar-nav {
       li {
@@ -149,8 +158,8 @@
         }
         &.active {
           a {
-            background: rgba(255,255,255,.1);
-            color: $hover;
+            background: rgba(3,96,162,.7);
+            color: #8fd1ff;
           }
         }
         svg {
@@ -200,13 +209,6 @@
           }
         }
       }
-    }
-  }
-  .navbar-brand  {
-    .iconfont {
-      float: left;
-      font-size: 26px;
-      margin-right: 10px;
     }
   }
   .navbar-default .navbar-toggle .icon-bar {

@@ -1,205 +1,243 @@
 <template>
     <div class="">
-        <header class="text-center" id="home">
-            <!--<div class="intro-text">-->
-            <!--<a href="" class="fa fa-angle-down page-scroll"></a>-->
-            <!--</div>-->
-        </header>
-        <section id="relative-tech" class="sblock sblock-gray text-center">
-            <div class="container">
-                <h1 class="section-title"><span>相关技术</span></h1>
-                <div class="relative-wrapper">
-                    <div class="cat">
-                        <ul>
-                            <li v-for="item in techCategories" :class="{active:relativeTechIndex===item.index}"
-                                @click="relativeTechIndex=item.index">
-                                {{item.name}}
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="show-wrapper" key="relative">
-                        <div  class="row" v-for="(parentItem, index) in techCategories[relativeTechIndex].relativeTechs" :key="index">
-                            <div class="col-md-4 tech-block inline"
-                                 v-for="item in parentItem">
-                                <div class="icon">
-                                    <i class="iconfont" :class="item.iconClass"></i>
+        <div class="banner-wrapper">
+            <header class="text-center" id="home"></header>
+            <div class="banner-text">
+                <p class="animated zoomIn">
+                    <span>换位思考</span>
+                    <span>结果导向</span>
+                    <span>勇于担当</span>
+                </p>
+            </div>
+        </div>
+        <div class="index-wrapper">
+            <section id="tech-standard" class="sblock  text-center">
+                <div class="container">
+                    <h1 class="section-title"><span>技术规范</span></h1>
+                    <div class="tech-wrapper">
+                        <div class="cat">
+                            <ul>
+                                <li v-for="item in techCategories" :class="{active:standardTechIndex===item.index}"
+                                    @click="standardTechIndex=item.index">
+                                    {{item.name}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="show-wrapper">
+                            <div class="row " v-for="(parentItem, index) in techCategories[standardTechIndex].standards" :key="index">
+                                <div class="col-lg-4 col-md-4 tech-block inline"
+                                     v-for="item in parentItem">
+                                    <a :href="item.url" target="_blank">
+                                        <div class="icon">
+                                            <i class="iconfont" :class="item.iconClass"></i>
+                                        </div>
+                                        <div class="content">
+                                            <div class="title">{{item.name}}</div>
+                                            <p>{{item.summary}}</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="title">{{item.name}}</div>
-                                <div class="content">
-                            <span v-for="child in item.items"><a :href="child.url"
-                                                                 target="_blank">{{child.name}}</a></span>
-                                </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section id="relative-tech" class="sblock sblock-gray text-center">
+                <div class="container">
+                    <h1 class="section-title"><span>相关技术</span></h1>
+                    <div class="relative-wrapper">
+                        <div class="cat">
+                            <ul>
+                                <li v-for="item in techCategories" :class="{active:relativeTechIndex===item.index}"
+                                    @click="relativeTechIndex=item.index">
+                                    {{item.name}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="show-wrapper" key="relative">
+                            <div  class="row" v-for="(parentItem, index) in techCategories[relativeTechIndex].relativeTechs" :key="index">
+                                <div class="col-md-4 tech-block"
+                                     v-for="item in parentItem">
+                                    <div class="icon">
+                                        <i class="iconfont" :class="item.iconClass"></i>
+                                    </div>
+                                    <div class="title">{{item.name}}</div>
+                                    <div class="content">
+                            <span v-for="child in item.items"><a :href="child.url"
+                                                                 target="_blank">{{child.name}}</a></span>
+                                    </div>
 
-        <section id="train-plan" class="sblock  text-center">
-            <div class="container">
-                <h1 class="section-title"><span>培训计划</span></h1>
-                <div class="train-wrapper">
-                    <div class="cat">
-                        <ul>
-                            <li v-for="(item, index) in trainBtn" :class="{active:trainIndex===index}">
-                                {{item}}
-                            </li>
-                        </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="train-list-wrapper">
-                        <div class="show-wrapper" key="train">
-                            <div  class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"  v-for="item1 in trainArr">
-                                    <div :class="item1.status ? 'train-item' : 'train-item train-item-unfinshed'">
-                                        <div class="train-icon"  v-show="item1.imgurl == ''">
-                                            <i class="iconfont icon-icontianjiatupian"></i>
-                                        </div>
-                                        <div class="train-img"  v-show="item1.imgurl != ''">
-                                            <img :src="item1.imgurl" >
-                                        </div>
-                                        <div class="train-content">
-                                            <p><span>培训人：</span><span>{{item1.tranier}}</span></p>
-                                            <p><span>培训时间：</span><span>{{item1.time}}</span></p>
-                                            <p><span>培训地点：</span><span>{{item1.place}}</span></p>
-                                            <p><span>培训内容：</span><span>{{item1.content}}</span></p>
-                                        </div>
-                                        <a class="train-video" :href="item1.videourl" target="_blank"><i v-show="item1.videourl == ''?false:true" class="iconfont icon-shipin"></i></a>
-                                        <div class="train-theme">
-                                            <p class="theme-text"><a target="_blank" :href="item1.docurl">{{item1.theme}}</a></p>
-                                            <p class="train-other clearfix"><span>{{item1.keyword}}</span><span class="train-status">{{item1.status ? "已完成" : "未开始"}}</span></p>
+                </div>
+            </section>
+
+            <section id="train-plan" class="sblock  text-center">
+                <div class="container">
+                    <h1 class="section-title"><span>培训计划</span></h1>
+                    <div class="train-wrapper">
+                        <div class="cat">
+                            <ul>
+                                <li v-for="(item, index) in trainBtn" :class="{active:trainIndex===index}">
+                                    {{item}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="train-list-wrapper">
+                            <div class="show-wrapper" key="train">
+                                <div  class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"  v-for="item1 in trainArr">
+                                        <div :class="item1.status ? 'train-item' : 'train-item train-item-unfinshed'">
+                                            <div class="train-icon"  v-show="item1.imgurl == ''">
+                                                <i class="iconfont icon-icontianjiatupian"></i>
+                                            </div>
+                                            <div class="train-img"  v-show="item1.imgurl != ''">
+                                                <img :src="item1.imgurl" >
+                                            </div>
+                                            <div class="train-content">
+                                                <p><span>培训人：</span><span>{{item1.tranier}}</span></p>
+                                                <p><span>培训时间：</span><span>{{item1.time}}</span></p>
+                                                <p><span>培训地点：</span><span>{{item1.place}}</span></p>
+                                                <p><span>培训内容：</span><span>{{item1.content}}</span></p>
+                                            </div>
+                                            <a class="train-video" :href="item1.videourl" target="_blank"><i v-show="item1.videourl == ''?false:true" class="iconfont icon-shipin"></i></a>
+                                            <div class="train-theme">
+                                                <p class="theme-text"><a target="_blank" :href="item1.docurl">{{item1.theme}}</a></p>
+                                                <p class="train-other clearfix"><span>{{item1.keyword}}</span><span class="train-status">{{item1.status ? "已完成" : "未开始"}}</span></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
-            </div>
-        </section>
-        <section id="technical-weekly" class="sblock sblock-gray  text-center">
-            <div class="container">
-                <h1 class="section-title"><span>技术周刊</span></h1>
-                <div class="tech-wrapper">
-                    <div class="cat">
-                        <ul>
-                            <li v-for="(item, index) in weeklyBtn" :class="{active:weeklyIndex===index}">
-                                {{item}}
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="show-wrapper" key="weekly">
-                        <ul class="weekly-list-wrapper" >
-                            <li v-for="(item, index) in weeklyArr" :key="index" :class="index % 2 == 0 ? 'weeklyLeft' : 'weeklyRight'">
-                                <p class="weekly-title"><a :href="item.url" target="_blank">{{item.title}}</a></p>
-                                <p class="weekly-outline">{{item.outline}}</p>
-                                <p class="weekly-other clearfix">
-                                    <span class="provider-img">
-                                        <i class="iconfont icon-yonghutouxiang"></i>
-                                        <img >
-                                    </span>
-                                    <span class="provider-name">{{item.provider}}</span>
-                                    <span class="weekly-date">{{item.date}}</span>
-                                </p>
-                            </li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="tech-subside" class="sblock   text-center">
-            <div class="container">
-                <h1 class="section-title"><span>技术沉淀</span></h1>
-                <div class="tech-wrapper">
-                    <div class="cat">
-                        <ul>
-                            <li v-for="(item, index) in subsideBtn" :class="{active:subsideIndex===index}">
-                                {{item}}
-                            </li>
-                        </ul>
+            </section>
+            <section id="technical-weekly" class="sblock sblock-gray  text-center">
+                <div class="container">
+                    <h1 class="section-title"><span>技术周刊</span></h1>
+                    <div class="tech-wrapper">
+                        <div class="cat">
+                            <ul>
+                                <li v-for="(item, index) in weeklyBtn" :class="{active:weeklyIndex===index}">
+                                    {{item}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="show-wrapper" key="weekly">
+                            <ul class="weekly-list-wrapper" >
+                                <li v-for="(item, index) in weeklyArr" :key="index" :class="index % 2 == 0 ? 'weeklyLeft' : 'weeklyRight'">
+                                    <p class="weekly-title"><a :href="item.url" target="_blank">{{item.title}}</a></p>
+                                    <p class="weekly-outline">{{item.outline}}</p>
+                                    <p class="weekly-other clearfix">
+                                        <span class="provider-img"  v-show="item.provider">
+                                            <i class="iconfont icon-gerenyonghutouxiang2"></i>
+                                            <img >
+                                        </span>
+                                        <span class="provider-name">{{item.provider}}</span>
+                                        <span class="weekly-date">{{item.date}}</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="show-wrapper" key="subside">
-                        <div class="row subside-list-wrapper " >
-                            <div v-for="(item, index) in subsideArr" :key="index" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 subside-item">
-                                <div class="subside-top text-center">
-                                    <p class="subside-icon"><i class="iconfont" :class="item.icon"></i></p>
-                                    <h2 class="subside-name">{{item.name}}</h2>
+                </div>
+            </section>
+            <section id="tech-subside" class="sblock   text-center">
+                <div class="container">
+                    <h1 class="section-title"><span>技术沉淀</span></h1>
+                    <div class="tech-wrapper">
+                        <div class="cat">
+                            <ul>
+                                <li v-for="(item, index) in subsideBtn" :class="{active:subsideIndex===index}">
+                                    {{item}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="show-wrapper" key="subside">
+                            <div class="row subside-list-wrapper " >
+                                <div v-for="(item, index) in subsideArr" :key="index" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 subside-item">
+                                    <div class="subside-top text-center">
+                                        <p class="subside-icon"><i class="iconfont" :class="item.icon"></i></p>
+                                        <h2 class="subside-name">{{item.name}}</h2>
+                                    </div>
+                                    <div class="subside-bottom">
+                                        <ul v-for="item1 in item.children" class="text-center">
+                                            <li v-for="item2 in item1"><a :href="item2.url">{{item2.name}}</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="subside-bottom">
-                                    <ul v-for="item1 in item.children" class="text-center">
-                                        <li v-for="item2 in item1"><a :href="item2.url">{{item2.name}}</a></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="dots-wrapper">
+                <p class="dots-text">技术只有起点，创新没有终点</p>
+                <div class="dots" id="dots"></div>
+            </div>
+
+            <section id="team" class="sblock  text-center">
+                <div class="container">
+                    <h1 class="section-title"><span>团队介绍</span></h1>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12 col-sm-12">
+                            <ul class="team-filter-btn">
+                                <li v-for="(item,index) in teamType" @click="handleClickTeamType(item,index)"
+                                    :class="tabIndex === index ? 'active': ''">
+                                    {{item}}
+                                </li>
+                            </ul>
+                            <div class="show-wrapper" key="team">
+                                <div id="teamListWrapper" class="team-list-wrapper clearfix show-transition" :style="{height: height+'px'}" >
+                                    <ul id="teamList" class="team-list clearfix">
+                                        <li :class="item.className" v-for="(item, index) in teamArr">
+                                            <a href="#">
+                                                <div class="spinner"></div>
+                                                <div class="team-img" ><i v-show="item.imgurl == ''" class="iconfont icon-yonghutouxiang"></i><img v-show="item.imgurl" :src="item.imgurl"></div>
+                                                <div class="team-content">
+                                                    <p>
+                                                        <span class="team-name">{{item.anotherName ? item.anotherName: item.name}}</span>
+                                                        <span class="team-des">{{item.des}}</span>
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <div class="dots-wrapper">
-            <p class="dots-text">技术只有起点，创新没有终点</p>
-            <div class="dots" id="dots"></div>
+            </section>
+            <section id="contact" class="sblock sblock-dark text-center">
+
+                <div class="container">
+                    <div class="contact-wrapper">
+                        <div class="copyright ">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-5 col-sm-12 col-xs-12"><p class="copyright-left">版权所有 智慧大数据</p>
+                                </div>
+                                <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12"><p class="copyright-right">
+                                    Copyright©️2018 BigDataSmart All Rights Reserved</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-
-        <section id="team" class="sblock  text-center">
-            <div class="container">
-                <h1 class="section-title"><span>团队介绍</span></h1>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-md-12 col-sm-12">
-                        <ul class="team-filter-btn">
-                            <li v-for="(item,index) in teamType" @click="handleClickTeamType(item,index)"
-                                :class="tabIndex === index ? 'active': ''">
-                                {{item}}
-                            </li>
-                        </ul>
-                        <div class="show-wrapper" key="team">
-                            <div id="teamListWrapper" class="team-list-wrapper clearfix show-transition" :style="{height: height+'px'}" >
-                                <ul id="teamList" class="team-list clearfix">
-                                    <li :class="item.className" v-for="(item, index) in teamArr">
-                                        <a href="#">
-                                            <div class="spinner"></div>
-                                            <div class="team-img"><i v-show="item.imgurl == ''" class="iconfont icon-yonghutouxiang"></i><img v-show="item.imgurl" :src="item.imgurl"></div>
-                                            <div class="team-content">
-                                                <p>
-                                                    <span class="team-name">{{item.name}}</span>
-                                                    <span class="team-des">{{item.des}}</span>
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="sblock sblock-dark text-center">
-
-            <div class="container">
-                <div class="contact-wrapper">
-                    <div class="copyright ">
-                        <div class="row">
-                            <div class="col-lg-7 col-md-5 col-sm-12 col-xs-12"><p class="copyright-left">版权所有 智慧大数据</p>
-                            </div>
-                            <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12"><p class="copyright-right">
-                                Copyright©️2018 BigDataSmart All Rights Reserved</p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="scrollToTop"><i class="iconfont icon-upbxiangshang" @click="gotoTop()"></i></div>
     </div>
 </template>
 
 <script>
     import techCategory from './tech-category';
     import teamObj from "./team.json"
-    import contract from './contract'
     import trainPlan from './train-plan.json'
     import weekly from './technical-weekly.json'
     import subside from './tech-subside.json'
@@ -217,7 +255,6 @@
                 teamAllArr: [],
                 teamObj: {},
                 //联系我们的相关配置信息
-                contractInfos: contract.infos,
                 tabIndex: 0,
                 //用于自动化测试的属性
                 testMsg: '自动化测试karma+mocha',
@@ -236,12 +273,8 @@
                 height3: 0,
                 height4: 0,
                   height5: 0,
+                height6: 0,
                   scrollTop: 0,
-                  show0: false,
-                  show1: false,
-                  show2: false,
-                  show3: false,
-                  show4: false,
               //技术沉淀
                 subsideBtn: [],
                 subsideIndex: 0,
@@ -249,7 +282,8 @@
             }
         },
         mounted() {
-          this.height0 = jQuery("#relative-tech").offset().top;
+
+          this.height6 = jQuery("#tech-standard").offset().top;
           window.addEventListener('scroll',this.handleScroll,true);
             this.initVanta();
             this.initTeam();
@@ -259,45 +293,61 @@
             this.initSubside();
         },
         components: {},
+        computed: {
+
+        },
         methods: {
             handleScroll(){
                 this.scrollTop = jQuery(document).scrollTop() ;
-                if(0 < this.scrollTop < this.height0){
+                if( this.scrollTop > 100){
+                  jQuery(".scrollToTop").addClass("active");
+                }else {
+                  jQuery(".scrollToTop").removeClass("active");
+                }
+
+                if(0 < this.scrollTop < this.height6){
                 jQuery("#nav li ").eq(0).addClass("active").siblings().removeClass("active");
                 }
-                if(this.height0 -140  < this.scrollTop) {
-                  jQuery("#nav li ").eq(1).addClass("active").siblings().removeClass("active");
-                  jQuery("#relative-tech").addClass("relative-tech");
-                  this.height1 = jQuery("#train-plan").offset().top;
-                  if(this.height1 -140 < this.scrollTop){
+                if(this.height6 -200 < this.scrollTop){
+                  jQuery("#nav li").eq(1).addClass("active").siblings().removeClass("active");
+//                  jQuery("#tech-standard").addClass("tech-standard");
+                  this.height0 = jQuery("#relative-tech").offset().top;
+                  if(this.height0 -200  < this.scrollTop) {
                     jQuery("#nav li ").eq(2).addClass("active").siblings().removeClass("active");
-//                    this.show1 = true;
-                    jQuery("#train-plan").addClass("train-plan");
-                    this.height2 = jQuery("#technical-weekly").offset().top;
-                    if(this.height2 -140 < this.scrollTop){
+                    jQuery("#relative-tech").addClass("relative-tech");
+                    this.height1 = jQuery("#train-plan").offset().top;
+                    if(this.height1 -200 < this.scrollTop){
                       jQuery("#nav li ").eq(3).addClass("active").siblings().removeClass("active");
-                      jQuery("#technical-weekly").addClass("technical-weekly");
-                      this.height3 = jQuery("#tech-subside").offset().top;
-                      if(this.height3 -140 < this.scrollTop){
+//                    this.show1 = true;
+                      jQuery("#train-plan").addClass("train-plan");
+                      this.height2 = jQuery("#technical-weekly").offset().top;
+                      if(this.height2 -200 < this.scrollTop){
                         jQuery("#nav li ").eq(4).addClass("active").siblings().removeClass("active");
-                        jQuery("#tech-subside").addClass("tech-subside");
-                        this.height4 = jQuery("#team").offset().top;
-                        if(this.height4 - 140 < this.scrollTop){
+                        jQuery("#technical-weekly").addClass("technical-weekly");
+                        this.height3 = jQuery("#tech-subside").offset().top;
+                        if(this.height3 -200 < this.scrollTop){
                           jQuery("#nav li ").eq(5).addClass("active").siblings().removeClass("active");
+                          jQuery("#tech-subside").addClass("tech-subside");
+                          this.height4 = jQuery("#team").offset().top;
+                          if(this.height4 - 200 < this.scrollTop){
+                            jQuery("#nav li ").eq(6).addClass("active").siblings().removeClass("active");
+                          }
                         }
                       }
                     }
                   }
                 }
+
             },
             initVanta() {
                 VANTA.NET({
                   el: "#home",
-                  color: 0xffffff,
-                  backgroundColor: 0xffffff,
-                  points: 8.00,
-                  spacing: 20.00,
-                  backgroundAlpha: 0.00
+                  color: 'rgba(3,150,255,1)',
+                  backgroundColor: 'rgba(5,23,63,1)',
+                  points: 10.00,
+                  maxDistance: 27.00,
+                  spacing: 14.00,
+                  backgroundAlpha: 0
                 });
                 VANTA.BIRDS({
                     el: "#dots",
@@ -363,6 +413,7 @@
                     });
                 });
                 this.techCategories = techCategoryArr;
+                console.log(this.techCategories)
 
                 /**
                  * 将一个一维数组转换成二维数据
@@ -426,7 +477,7 @@
                     arr.push(item.type);
                 })
                 this.weeklyBtn = arr;
-                this.weeklyArr = weeklyArr[0].details;
+                this.weeklyArr = weeklyArr[0].details.slice(0,4);
             },
             //初始化技术沉淀
             initSubside(){
@@ -456,6 +507,9 @@
                   return all_arr;
                 }
                 this.subsideArr = details;
+            },
+            gotoTop(){
+              jQuery("html, body").animate({scrollTop: 0}, 1000);
             }
         }
     }
@@ -466,25 +520,39 @@
     @import "./../../assets/css/variable.scss";
     @import "./../../assets/css/mixin.scss";
     @import "../../../static/css/animate.min.css";
-    header {
-        /*background-attachment: fixed;*/
-        /*background: linear-gradient(to right, #72edf2 0%,#5151e5 100%);*/
-        /*background: linear-gradient(to top, #90f7e7 0%,#32ccbc 100%);*/
-        /*background: linear-gradient(to left, #004e92 0%,#000428 100%);*/
-        /*background: linear-gradient(to bottom, #00b4db 0%,#0083b0 100%);*/
-        /*background: linear-gradient(to left, #667db6 0%, #0082c8 20%,#0082c8 80%, #667db6 100%);*/
-        /*background: linear-gradient(to bottom, #2c3e50 0%,#3498db 100%);*/
-        /*background: linear-gradient(to bottom, #7474bf 0%,#348ac7 100%);*/
-        /*background: linear-gradient(to bottom, #1a2980 0%,#26d0ce 100%);*/
-        background: linear-gradient(165deg, #000046 0%,#1cb5e0 100%);
-        /*<!--background: linear-gradient(-45deg, #1488cc 0%,#2b32b2 100%);-->*/
-        background-size: cover;
-        color: #cfcfcf;
+    .banner-wrapper {
+        width: 100%;
+        header {
+            background: linear-gradient(135deg, #111222 0%,#090b2a 100%);
+            background-size: cover;
+            color: #cfcfcf;
+            height: 100vh;
+            z-index: 10;
+        }
+        .banner-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            p {
+                text-align: center;
+                color: rgba(255,255,255,.8 );
+                font-size: 4rem;
+                line-height: 100vh;
+                span {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .index-wrapper {
         position: relative;
-        height: 500px;
+        z-index: 100;
     }
     .cat {
-        margin: 25px 0;
+        margin: 25px 0 0;
         text-align: center;
         ul li {
             position: relative;
@@ -514,7 +582,7 @@
                 top: 0;
                 transition-delay: 0.1s;
                 border-bottom-color: $hover;
-                z-index: -1;
+                z-index: 1;
             }
             &.active {
                 color: $hover;
@@ -526,7 +594,7 @@
                 top: 0;
                 transition-delay: 0.1s;
                 border-bottom-color: $hover;
-                z-index: -1;
+                z-index: 1;
             }
         }
         li:hover ~ li::before {
@@ -534,10 +602,11 @@
         }
     }
     .sblock {
-        padding: 20px 0 80px 0;
+        padding: 20px 0 50px 0;
+        background: #fff;
         .section-title {
             padding: 20px 0;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-size: 32px;
             color: $section-title;
             text-align: center;
@@ -593,13 +662,13 @@
         margin-top: 50px;
         padding: 10px;
         opacity: 0;
-        transition: all .35s;
+        transition: all 1s ease-out;
         .icon {
             margin: auto;
             float: none;
-            width: 80px;
-            height: 80px;
-            line-height: 80px;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
             text-align: center;
             font-size: 2em;
             border-radius: 50%;
@@ -608,7 +677,7 @@
                 color: #888;
             }
             i.icon-keshihua {
-                font-size: 2.1em;
+                font-size: 2em;
             }
         }
         .title {
@@ -618,14 +687,14 @@
             color: #666;
         }
         .content {
-            margin: 15px 0;
+            margin: 10px 0;
             padding: 0 10px;
             text-align: center;
             color: #666;
             span {
                 display: inline-block;
-                padding: 10px;
-                margin: 10px;
+                padding: 8px 8px;
+                margin: 10px 10px 0;
                 color: #666;
                 background: transparent;
                 border: 1px solid #666;
@@ -642,7 +711,67 @@
             }
         }
     }
+
     .relative-tech {
+        .tech-block {
+            margin-top: 10px;
+            opacity: 1;
+        }
+    }
+    .tech-block.inline {
+        margin-top: 30px;
+        padding: 10px;
+        opacity: 1;
+        &:hover {
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1) inset !important;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+            &:hover {
+                outline: medium none;
+                /*text-decoration: none;*/
+                transition: all .2s ease-out;
+                .content {
+                    color: #333;
+                }
+                .icon {
+                    border: 1px solid #bbb;
+                    i {
+                        color: #666
+                    }
+                ;
+                }
+            }
+        }
+        .icon {
+            float: left;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 2em;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            i {
+                color: #888;
+            }
+        }
+        .content {
+            margin-left: 50px;
+            padding: 0 10px;
+            text-align: left;
+            color: #666;
+            .title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+            p {
+                line-height: 2em;
+            }
+        }
+    }
+    .tech-standard {
         .tech-block {
             margin-top: 30px;
             opacity: 1;
@@ -707,33 +836,24 @@
             li {
                 position: relative;
                 float: left;
-                width: 90px;
-                height: 90px;
-                margin: 0 35px 50px 0;
+                width: 80px;
+                margin: 0 15px;
                 border-radius: 50%;
                 a {
+                    display: inline-block;
                     .spinner {
                         position:absolute;
-                        width: 90px;
-                        height: 90px;
-                        border: 5px solid $team-border;
-                        border-right-color: $team-border-right-bottom;
-                        border-bottom-color: $team-border-right-bottom;
+                        width: 80px;
+                        height: 80px;
                         border-radius: 50%;
                         transition: all .3s;
                         z-index: 10;
                     }
                     .team-img {
-                        position: absolute;
-                        width: auto;
-                        height: auto;
-                        top: 5px;
-                        left: 5px;
-                        bottom: 5px;
-                        right: 5px;
+                        width: 80px;
+                        height: 80px;
                         border-radius: 50%;
                         overflow: hidden;
-                        transition: all .3s;
                         .iconfont {
                             font-size: 60px;
                             line-height: 100px;
@@ -742,25 +862,28 @@
                         img{
                             width: 100%;
                             height: auto;
-                            border-radius: 50%;
-                            filter: grayscale(100%);
+                            filter: grayscale(90%);
+                            transition: all .3s;
                         }
                     }
                     .team-content {
-                        position: absolute;
+                        position: relative;
                         width: 100%;
-                        height: 26px;
-                        left: 0;
-                        bottom: -35px;
+                        height: 52px;
+                        margin-top: 5px;
                         text-align: center;
                         transition: all 0.3s;
                         overflow: hidden;
                         p {
-                            position: relative;
+                            position: absolute;
+                            width: 100%;
+                            height: 26px;
                             top: 0;
                             margin: 0;
                             color: #5f6367;
+                            text-align: center;
                             transition: all 0.3s;
+                            overflow: hidden;
                             span {
                                 display: block;
                                 margin-bottom: 10px;
@@ -772,14 +895,16 @@
                             transform: rotate(180deg);
                         }
                         .team-img {
-                            transform: scale(1.1);
+                            overflow: hidden;
                             img {
+                                transform: scale(1.1);
                                 filter: grayscale(0%);
                             }
                         }
                         .team-content {
                             p {
                                 top: -34px;
+                                height: 80px;
                             }
 
                         }
@@ -895,7 +1020,7 @@
         .train-list-wrapper {
             .train-item {
                 opacity: 1;
-                /*transform: scale(1, 1);*/
+                transform: scale(1, 1);
             }
         }
     }
@@ -912,8 +1037,8 @@
             box-shadow: 0 1px 2px $box-shadow;
             border-radius: 4px;
             opacity: 0;
-            /*transform: scale(0.5, 0.5);*/
-            transition: 1s;
+            transform: scale(0.8, 0.8);
+            transition: 1s ease-out;
             .train-icon {
                 position:absolute;
                 top: 0;
@@ -1013,9 +1138,9 @@
                     overflow: hidden;
                     white-space: nowrap;
                     text-overflow: ellipsis;
-                    transition: all .3s;
                     a {
-                        color: rgb(51,51,51)
+                        color: rgb(51,51,51);
+                        transition: all .35s ease;
                     }
                 }
             }
@@ -1075,8 +1200,10 @@
                 }
                 .train-theme {
                     .theme-text {
-                        font-size: 16px;
-                        font-weight: bold;
+                        a{
+                            color: $hover;
+                        }
+
                     }
                 }
                 .train-other {
@@ -1110,21 +1237,22 @@
                 opacity: 1;
             }
             li.weeklyLeft {
-                margin-left: 0;
+                left: 0;
             }
             li.weeklyRight {
-                margin-right: 0;
+                right: 0;
             }
         }
     }
     .weekly-list-wrapper {
         width: 100%;
         li {
+            position: relative;
             padding: 10px 20px;
             text-align: left;
-            border-bottom: 1px dashed rgba(138,138,138, .3);
+            border-bottom: 1px solid rgba(138,138,138, .2);
             opacity: 0;
-            transition: .35s;
+            transition: 1s ease-out;
             &:last-child {
                 border: none;
             }
@@ -1158,10 +1286,10 @@
                     float: left;
                     width: 24px;
                     height: 24px;
-                    border-radius: 50%;
                     overflow: hidden;
                     i {
-                        color: rgba(0,0,0,0.1);
+                        font-size: 18px;
+                        color: rgba(0,0,0,0.4);
                     }
                     &:before {
                         position: absolute;
@@ -1171,7 +1299,6 @@
                         right: 0;
                         bottom: 0;
                         left: 0;
-                        border: 1px solid rgba(0,0,0,0.1);
                         border-radius: 50%;
                     }
                 }
@@ -1187,14 +1314,15 @@
             }
         }
         li.weeklyLeft {
-            margin-left: -50px;
+            left: -50px;
         }
         li.weeklyRight {
-            margin-right: -50px;
+
+            right: -50px;
         }
     }
     .show-wrapper {
-        min-height: 300px;
+        min-height: 250px;
     }
     .show-transition {
         transition: all .35s;
@@ -1212,7 +1340,7 @@
         .subside-item {
             opacity: 0;
             transform: translate(-50px, 0);
-            transition: 1s;
+            transition: 1s ease-out;
             .subside-top {
                 .subside-icon {
                     padding: 10px 0;
@@ -1261,6 +1389,24 @@
             }
         }
 
+    }
+    .scrollToTop {
+        position: fixed;
+        bottom: 80px;
+        right: 50px;
+        z-index: 1000;
+        cursor: pointer;
+        opacity: 0;
+        transition:  .5s ease-out;
+        i {
+            font-size: 40px;
+        }
+        &:hover {
+            color: $hover;
+        }
+    }
+    .scrollToTop.active {
+        opacity: 1;
     }
     @media screen and (max-width: 768px){
         header {

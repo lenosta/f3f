@@ -42,7 +42,7 @@
           "iconClass": "icon-jiejuefangan"
         }
       ],
-      "relativeTechs": [
+        "relativeTechs": [
         {
           "name": "CSS",
           "iconClass": "icon-css3",
@@ -157,6 +157,18 @@
           ]
         }
       ]
+    },
+    {
+      "name": "中台&微服务",
+      "index": 1,
+      "standards":[],
+      "relativeTechs": []
+    },
+    {
+      "name": "模型&机器学习",
+      "index": 2,
+      "standards":[],
+      "relativeTechs": []
     }
   ]
 }
