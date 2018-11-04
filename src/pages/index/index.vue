@@ -2,13 +2,10 @@
     <div class="">
         <div class="banner-wrapper">
             <header class="text-center" id="home"></header>
-            <div class="banner-text">
-                <p class="animated zoomIn">
-                    <span>换位思考</span>
-                    <span>结果导向</span>
-                    <span>勇于担当</span>
-                </p>
-            </div>
+            <p>“换位思考 结果导向 勇于当担”</p>
+            <p >“各有专长 协作协同 共创价值”</p>
+            <p class="banner-text">--让智慧的数据会说话，打造智慧的数据服务能力</p>
+            <a class="arrow-down" @click="arrowDown()"><i class="iconfont icon-xiangxia"></i></a>
         </div>
         <div class="index-wrapper">
             <section id="tech-standard" class="sblock  text-center">
@@ -176,7 +173,7 @@
                 </div>
             </section>
             <div class="dots-wrapper">
-                <p class="dots-text">技术只有起点，创新没有终点</p>
+                <p class="dots-text">各有专长 协作协同 共创价值</p>
                 <div class="dots" id="dots"></div>
             </div>
 
@@ -197,9 +194,9 @@
                                 <div id="teamListWrapper" class="team-list-wrapper clearfix show-transition" :style="{height: height+'px'}" >
                                     <ul id="teamList" class="team-list clearfix">
                                         <li :class="item.className" v-for="(item, index) in teamArr">
-                                            <a href="#">
+                                            <a :href="item.blogUrl ? item.blogUrl : ''">
                                                 <div class="spinner"></div>
-                                                <div class="team-img" ><i v-show="item.imgurl == ''" class="iconfont icon-yonghutouxiang"></i><img v-show="item.imgurl" :src="item.imgurl"></div>
+                                                <div class="team-img" ><i v-show="item.imgurl == ''" class="iconfont icon-gerenyonghutouxiang2"></i><img v-show="item.imgurl" :src="item.imgurl"></div>
                                                 <div class="team-content">
                                                     <p>
                                                         <span class="team-name">{{item.anotherName ? item.anotherName: item.name}}</span>
@@ -231,7 +228,7 @@
                 </div>
             </section>
         </div>
-        <div class="scrollToTop"><i class="iconfont icon-upbxiangshang" @click="gotoTop()"></i></div>
+        <div class="scrollToTop" @click="gotoTop()"><i class="iconfont icon-xiangshang" ></i></div>
     </div>
 </template>
 
@@ -349,9 +346,12 @@
                   spacing: 14.00,
                   backgroundAlpha: 0
                 });
+                jQuery(".banner-wrapper p").eq(0).addClass("cultural-consensus");
+                jQuery(".banner-wrapper p").eq(1).addClass("development-goals");
+                jQuery(".banner-wrapper p").eq(2).addClass("effort-direction");
                 VANTA.BIRDS({
                     el: "#dots",
-                    backgroundColor: 0x0082c8,
+                    backgroundColor: 0x0396ff,
                     color1: 0xffffff,
                     color2: 0xffffff,
                     wingSpan: 10.00,
@@ -359,7 +359,7 @@
                     separation: 51.00,
                     alignment: 70.00,
                     cohesion: 73.00,
-                    backgroundAlpha: 0.8
+                    backgroundAlpha: 0
                 })
             },
             initTeam() {
@@ -510,6 +510,9 @@
             },
             gotoTop(){
               jQuery("html, body").animate({scrollTop: 0}, 1000);
+            },
+            arrowDown(){
+              jQuery("html, body").animate({scrollTop: this.height6}, 1000);
             }
         }
     }
@@ -529,21 +532,64 @@
             height: 100vh;
             z-index: 10;
         }
-        .banner-text {
+        p{
             position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
+            left: 10%;
+            z-index: 11;
+            color: rgba(255,255,255,.9);
+            font-size: 2.6em;
             opacity: 0;
-            p {
-                text-align: center;
-                color: rgba(255,255,255,.8 );
-                font-size: 4rem;
-                line-height: 100vh;
-                span {
-                    display: inline-block;
-                }
+            transform: skewX(45deg);
+        }
+        .banner-text {
+            right: 0;
+            left: auto;
+            color: rgba(255,255,255,.7);
+            transform: skewX(-45deg);
+        }
+        .cultural-consensus {
+            top: 30%;
+            left: 25%;
+            opacity: 1;
+            transform: skewX(0);
+            transition: all 1s ease-in-out .5s;
+        }
+        .development-goals {
+            top: 40%;
+            left: 25%;
+            opacity: 1;
+            transform: skewX(0);
+            transition: all 1s ease-in-out 1s;
+        }
+        .effort-direction {
+            top: 50%;
+            right: 15%;
+            opacity: 1;
+            font-size: 1.8em;
+            transform: skewX(-10deg);
+            transition: all 1s ease-in-out 1.5s;
+        }
+        .arrow-down {
+            position: absolute;
+            bottom: 100px;
+            left: 48%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(3,150,255 ,.6);
+            z-index: 11;
+            text-align: center;
+            transition: all 1s ease-out;
+            cursor: pointer;
+            animation: bounce 3s ease-in-out infinite;
+            i {
+                color: rgba(255,255,255,.8);
+                font-size: 30px;
+                line-height: 50px;
+                /*animation:*/
+            }
+            &:hover {
+                background: $hover;
             }
         }
     }
@@ -748,6 +794,7 @@
             float: left;
             width: 50px;
             height: 50px;
+            margin-top: 48px;
             line-height: 50px;
             text-align: center;
             font-size: 2em;
@@ -809,7 +856,7 @@
                 top: 0;
                 transition-delay: 0.1s;
                 border-bottom-color: $hover;
-                z-index: -1;
+                z-index: 1;
             }
             &.active {
                 color: $hover;
@@ -820,7 +867,7 @@
                 top: 0;
                 transition-delay: 0.1s;
                 border-bottom-color: $hover;
-                z-index: -1;
+                z-index: 1;
             }
         }
         li:hover ~ li::before {
@@ -832,7 +879,6 @@
         .team-list {
             font-size: $fz-md;
             color: $sblock-gray-text;
-
             li {
                 position: relative;
                 float: left;
@@ -854,16 +900,18 @@
                         height: 80px;
                         border-radius: 50%;
                         overflow: hidden;
+                        background: #fbfbfb;
                         .iconfont {
-                            font-size: 60px;
-                            line-height: 100px;
-                            color: #bbb;
+                            font-size: 70px;
+                            line-height: 110px;
+                            color: #f1f1f1;
+                            transition: all .3s ease-in;
                         }
                         img{
                             width: 100%;
                             height: auto;
                             filter: grayscale(90%);
-                            transition: all .3s;
+                            transition: all .3s ease-in;
                         }
                     }
                     .team-content {
@@ -892,10 +940,15 @@
                     }
                     &:hover {
                         .spinner {
-                            transform: rotate(180deg);
+                            box-shadow: 0 0 10px 2px #efefef inset;
+                            /*transform: rotate(180deg);*/
                         }
                         .team-img {
                             overflow: hidden;
+                            .iconfont {
+                                font-size: 80px;
+                                color: #e8e8e8;
+                            }
                             img {
                                 transform: scale(1.1);
                                 filter: grayscale(0%);
@@ -987,14 +1040,15 @@
     }
     .dots-wrapper {
         position: relative;
-        height: 200px;
+        height: 150px;
+        background: rgba(7, 111, 185, .9);
         p {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             text-align: center;
-            line-height: 200px;
+            line-height: 150px;
             font-size: 36px;
             font-weight: 500;
             z-index: 100;
@@ -1392,33 +1446,63 @@
     }
     .scrollToTop {
         position: fixed;
-        bottom: 80px;
-        right: 50px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        bottom: 100px;
+        right: 2%;
         z-index: 1000;
+        background: #fff;
+        color: #ccc;
+        text-align: center;
+        line-height: 40px;
         cursor: pointer;
         opacity: 0;
-        transition:  .5s ease-out;
+        transition:  .5s ease-in-out;
+        box-shadow: 0 1px 10px #ccc;
         i {
-            font-size: 40px;
+            font-size: 24px;
         }
         &:hover {
-            color: $hover;
+            background: $hover;
+            color: #fff;
+            box-shadow: 0 0 3px $hover;
         }
     }
     .scrollToTop.active {
         opacity: 1;
     }
     @media screen and (max-width: 768px){
-        header {
-            height: 300px;
-        }
-        .copyright {
-            .copyright-left {
-                text-align: left;
+        .banner-wrapper{
+            header {
+                height: 100vh;
             }
-            .copyright-right {
-                text-align: left;
-                font-size: 12px;
+            p{
+                left: 0;
+                font-size: 2em;
+            }
+            .banner-text {
+            }
+            .cultural-consensus {
+                left: 0;
+            }
+            .development-goals {
+                left: 0;
+            }
+            .effort-direction {
+                right: 0;
+                font-size: 1.3em;
+            }
+        }
+        .contact-wrapper{
+            .copyright {
+                .copyright-left {
+                    text-align: left;
+                }
+                .copyright-right {
+                    text-align: left;
+                    font-size: 12px;
+                }
             }
         }
         .sblock {
@@ -1429,69 +1513,6 @@
         .train-list-wrapper{
             .train-item{
                 margin: 0 auto 20px auto;
-            }
-        }
-
-        .team-list-wrapper {
-            .team-list {
-                li {
-                    width: 70px;
-                    height: 70px;
-                    margin: 0 10px 40px 10px;
-                    a {
-                        .spinner {
-                            width: 70px;
-                            height: 70px;
-                        }
-                        .team-img {
-                            top: 5px;
-                            left: 5px;
-                            bottom: 5px;
-                            right: 5px;
-                            .iconfont {
-                                font-size: 50px;
-                                line-height: 80px;
-                            }
-                        }
-                        .team-content {
-                            height: 26px;
-                            left: 0;
-                            bottom: -35px;
-                            text-align: center;
-                            transition: all 0.3s;
-                            overflow: hidden;
-                            p {
-                                position: relative;
-                                top: 0;
-                                margin: 0;
-                                color: #5f6367;
-                                transition: all 0.3s;
-                                span {
-                                    display: block;
-                                }
-                            }
-                        }
-                        &:hover {
-                            .spinner {
-                                transform: rotate(180deg);
-                            }
-                            .team-img {
-                                transform: scale(1.1);
-                                img {
-                                    filter: grayscale(0%);
-                                }
-                            }
-                            .team-content {
-                                p {
-                                    top: -24px;
-                                }
-
-                            }
-                        }
-                    }
-
-
-                }
             }
         }
         .dots-wrapper {
