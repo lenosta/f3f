@@ -349,6 +349,7 @@
                 jQuery(".banner-wrapper p").eq(0).addClass("cultural-consensus");
                 jQuery(".banner-wrapper p").eq(1).addClass("development-goals");
                 jQuery(".banner-wrapper p").eq(2).addClass("effort-direction");
+                jQuery(".arrow-down").addClass("active");
                 VANTA.BIRDS({
                     el: "#dots",
                     backgroundColor: 0x0396ff,
@@ -581,6 +582,7 @@
             text-align: center;
             transition: all 1s ease-out;
             cursor: pointer;
+            opacity: 0;
             animation: bounce 3s ease-in-out infinite;
             i {
                 color: rgba(255,255,255,.8);
@@ -591,6 +593,10 @@
             &:hover {
                 background: $hover;
             }
+        }
+        .arrow-down.active {
+            opacity: 1;
+            transition: all 1s ease-in-out 1.5s;
         }
     }
     .index-wrapper {
