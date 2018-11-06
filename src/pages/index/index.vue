@@ -108,7 +108,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="go-to-list"><span class="go-to-list-text">查看列表</span><i class="iconfont icon-xiangyou1"></i></p>
+                                <p class="go-to-list"><span class="go-to-list-text">查看列表</span><i class="iconfont icon-youjiantou"></i></p>
                             </div>
                         </div>
 
@@ -142,7 +142,7 @@
                                     </p>
                                 </li>
                             </ul>
-                            <p class="go-to-list"><span class="go-to-list-text">查看列表</span><i class="iconfont icon-xiangyou1"></i></p>
+                            <p class="go-to-list"><span class="go-to-list-text">查看列表</span><i class="iconfont icon-youjiantou"></i></p>
                         </div>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                         </div>
                         <div class="show-wrapper" key="subside">
                             <div class="row subside-list-wrapper " >
-                                <div v-for="(item, index) in subsideArr" :key="index" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 subside-item">
+                                <div v-for="(item, index) in subsideArr" :key="index" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 subside-item">
                                     <div class="subside-top text-center">
                                         <p class="subside-icon"><i class="iconfont" :class="item.icon"></i></p>
                                         <h2 class="subside-name">{{item.name}}</h2>
@@ -292,6 +292,9 @@
             this.initTrainPlan();
             this.initWeekly();
             this.initSubside();
+          jQuery(".main").click(function(){
+            jQuery("[data-target='#bs-example-navbar-collapse-1']").click();
+          })
         },
         components: {},
         computed: {
@@ -309,6 +312,7 @@
                 if(0 < this.scrollTop < this.height6){
                 jQuery("#nav li ").eq(0).addClass("active").siblings().removeClass("active");
                 }
+
                 if(this.height6 -200 < this.scrollTop){
                   jQuery("#nav li").eq(1).addClass("active").siblings().removeClass("active");
 //                  jQuery("#tech-standard").addClass("tech-standard");
@@ -468,11 +472,20 @@
                     if(item.status){
                       listArr.push(item);
                     }
-                })
-                if(listArr.length > 6) {
-                  listArr = listArr.slice(0, 7);
-                }
+                });
                 this.trainArr = listArr;
+                let width = document.body.clientWidth;
+                if(width <= 768){
+                    this.trainArr = this.trainArr.slice(0, 3);
+                }else {
+                  if(listArr.length > 6) {
+                    this.trainArr = listArr.slice(0, 7);
+                  }
+
+                }
+
+
+
             },
             // 初始化技术周刊
             initWeekly(){
@@ -586,14 +599,15 @@
             text-align: center;
             cursor: pointer;
             opacity: 0;
+            overflow: hidden;
             i {
                 position: absolute;
-                top: 5px;
+                transform: translateY(0);
                 left: 16px;
                 color: rgba(255,255,255,.8);
-                opacity: 0.5;
+                opacity: 0;
                 font-size: 26px;
-                animation: arrowDown 2s ease-in-out infinite;
+                animation: arrowDown 2s infinite;
             }
             &.active {
                 opacity: 1;
@@ -609,9 +623,9 @@
         }
     }
     @keyframes arrowDown {
-        0% {top: 5px; opacity: 0.3;}
-        70% {top: 23px; opacity: 1;}
-        100% {top: 5px;opacity: 0.3;}
+        0% {transform: translateY(0px);opacity: 0;}
+        90% {transform: translateY(25px);opacity: 1;}
+        100% {transform: translateY(25px); opacity: 0;}
     }
     .index-wrapper {
         position: relative;
@@ -812,6 +826,7 @@
         padding: 10px;
         opacity: 1;
         &:hover {
+            border-radius: 5px;
             box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1) inset !important;
         }
         a {
@@ -1538,7 +1553,7 @@
             left: 0;
             top: 0;
             color: #ccc;
-            font-size: 20px;
+            font-size: 24px;
             transition: all .3s ease-out;
         }
         &:hover {
@@ -1551,13 +1566,16 @@
             }
         }
     }
+
     @media screen and (max-width: 768px){
         .banner-wrapper{
             header {
                 height: 100vh;
             }
             p{
+                width: 100%;
                 left: 0;
+                text-align: center;
                 font-size: 2em;
             }
             .banner-text {
@@ -1569,8 +1587,7 @@
                 left: 0;
             }
             .effort-direction {
-                right: 0;
-                font-size: 1.3em;
+                opacity: 0;
             }
         }
         .contact-wrapper{
@@ -1605,5 +1622,40 @@
                 height: 100%;
             }
         }
+        .team-list-wrapper {
+            .team-list {
+                li {
+                    width: 80px;
+                    margin: 0 24px;
+                }
+            }
+        }
+        .tech-block.inline {
+            margin-top: 0;
+            padding: 5px 15px;
+            .icon {
+                margin-top: 30px;
+            }
+        }
+        .tech-block {
+            .icon {
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+                i.icon-keshihua {
+                    font-size: 1.8em;
+                }
+            }
+        }
+        .weekly-list-wrapper {
+            li.weeklyLeft {
+                left: -20px;
+            }
+            li.weeklyRight {
+                right: -20px;
+            }
+        }
+
+
     }
 </style>

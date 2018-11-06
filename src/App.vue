@@ -214,7 +214,10 @@
   .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
   }
-
+  .navbar-fixed-bottom .navbar-collapse,
+  .navbar-fixed-top .navbar-collapse {
+    max-height: 370px!important;
+  }
   .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
     background-color: $hover;
   }
@@ -222,12 +225,13 @@
     .navbar-default {
       background: rgba(0,0,0,.5);
     }
-    .navbar-default .navbar-collapse.in {
+    .navbar-default  {
       .navbar-nav{
         li{
           &.active{
             a {
-              background: rgba(0,0,0,.8);
+              background: rgba(0,0,0,.6);
+              color: $hover;
             }
           }
         }

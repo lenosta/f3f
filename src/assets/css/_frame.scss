@@ -9,7 +9,8 @@ body, html{
   font-size: $fz-sm;
   color: $cl-text ;
 }
- 
+
+
 //框架整体布局
 .wrapper {
     width: $width-page;
@@ -28,12 +29,12 @@ body, html{
 /* 滚动槽 */
 ::-webkit-scrollbar-track {
     border-radius: 10px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.6);
 }
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.8);
 }
 // ::-webkit-scrollbar-thumb:window-inactive {
 // background:rgba(255,0,0,0.4);
