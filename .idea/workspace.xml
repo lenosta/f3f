@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6712d22-935f-4857-9994-ab3e6f49a195" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/js/api.js" afterPath="$PROJECT_DIR$/src/assets/js/api.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/index/index.vue" afterPath="$PROJECT_DIR$/src/pages/index/index.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,8 +19,8 @@
       <file leaf-file-name="index.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/index/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="1589" column="13" lean-forward="true" selection-start-line="1589" selection-start-column="13" selection-end-line="1589" selection-end-column="13" />
+            <state relative-caret-position="449">
+              <caret line="1641" column="35" lean-forward="true" selection-start-line="1641" selection-start-column="35" selection-end-line="1641" selection-end-column="35" />
               <folding>
                 <element signature="n#section#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="n#section#5;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
@@ -69,7 +67,6 @@
                 <element signature="e#55842#55924#0" expanded="false" />
                 <element signature="e#55952#56044#0" expanded="false" />
                 <element signature="e#56067#56297#0" expanded="false" />
-                <element signature="e#56325#56483#0" expanded="false" />
                 <element signature="e#56511#56648#0" expanded="false" />
                 <element signature="e#56669#56898#0" expanded="false" />
                 <element signature="e#56928#57083#0" expanded="false" />
@@ -260,12 +257,12 @@
       <workItem from="1540957043045" duration="622000" />
       <workItem from="1540967550295" duration="53884000" />
       <workItem from="1541157518030" duration="3097000" />
-      <workItem from="1541381371351" duration="28903000" />
+      <workItem from="1541381371351" duration="28977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100723000" />
+    <option name="totallyTimeSpent" value="100797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="800" extended-state="0" />
@@ -387,7 +384,6 @@
             <element signature="e#55842#55924#0" expanded="false" />
             <element signature="e#55952#56044#0" expanded="false" />
             <element signature="e#56067#56297#0" expanded="false" />
-            <element signature="e#56325#56483#0" expanded="false" />
             <element signature="e#56511#56648#0" expanded="false" />
             <element signature="e#56669#56898#0" expanded="false" />
             <element signature="e#56928#57083#0" expanded="false" />
@@ -745,8 +741,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/index/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="1589" column="13" lean-forward="true" selection-start-line="1589" selection-start-column="13" selection-end-line="1589" selection-end-column="13" />
+        <state relative-caret-position="449">
+          <caret line="1641" column="35" lean-forward="true" selection-start-line="1641" selection-start-column="35" selection-end-line="1641" selection-end-column="35" />
           <folding>
             <element signature="n#section#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#section#5;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
@@ -793,7 +789,6 @@
             <element signature="e#55842#55924#0" expanded="false" />
             <element signature="e#55952#56044#0" expanded="false" />
             <element signature="e#56067#56297#0" expanded="false" />
-            <element signature="e#56325#56483#0" expanded="false" />
             <element signature="e#56511#56648#0" expanded="false" />
             <element signature="e#56669#56898#0" expanded="false" />
             <element signature="e#56928#57083#0" expanded="false" />

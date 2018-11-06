@@ -1639,7 +1639,7 @@
             .team-list {
                 li {
                     width: 80px;
-                    margin: 0 24px;
+                    margin: 0 20px;
                 }
             }
         }
