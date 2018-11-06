@@ -1576,7 +1576,7 @@
                 width: 100%;
                 left: 0;
                 text-align: center;
-                font-size: 2em;
+                font-size: 1.8em;
             }
             .banner-text {
             }
