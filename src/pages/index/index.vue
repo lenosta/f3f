@@ -607,7 +607,7 @@
                 color: rgba(255,255,255,.8);
                 opacity: 0;
                 font-size: 26px;
-                animation: arrowDown 2s infinite;
+                animation: arrowDown 2.5s infinite;
             }
             &.active {
                 opacity: 1;
@@ -624,7 +624,7 @@
     }
     @keyframes arrowDown {
         0% {transform: translateY(0px);opacity: 0;}
-        90% {transform: translateY(25px);opacity: 1;}
+        80% {transform: translateY(25px);opacity: 1;}
         100% {transform: translateY(25px); opacity: 0;}
     }
     .index-wrapper {
@@ -1581,13 +1581,26 @@
             .banner-text {
             }
             .cultural-consensus {
+                top: 35%;
                 left: 0;
             }
             .development-goals {
+                top: 45%;
                 left: 0;
             }
             .effort-direction {
                 opacity: 0;
+            }
+            .arrow-down {
+                bottom: 50px;
+                left: 46%;
+                width: 50px;
+                height: 50px;
+                background: rgba(3,150,255 ,.8);
+                i {
+                    left: 13px;
+                    font-size: 24px;
+                }
             }
         }
         .contact-wrapper{

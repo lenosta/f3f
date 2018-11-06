@@ -13,12 +13,7 @@ import './assets/js/bootstrap/css/bootstrap.min.css'
 import './assets/css/main.scss'
 // 引入iconfont
 import './assets/iconfont/iconfont.css'
-// 引入vue-lazyload
-import VueLazyload from 'vue-lazyload'
 
-Vue.use(VueLazyload, {
-  lazyComponent: true
-});
 
 Vue.config.productionTip = false
 
