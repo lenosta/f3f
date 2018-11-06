@@ -1,20 +1,20 @@
 {
   "数据治理": [
-    {"name": "兰劭晖 ", "des": "架构设计", "blogUrl": "", "imgurl": "" },
-    {"name": "王项男 ", "des": "数据开发", "blogUrl": "", "imgurl": ""},
-    {"name": "洪庆力 ", "des": "数据开发", "blogUrl": "", "imgurl": ""},
+    {"name": "兰劭晖 ", "des": "", "blogUrl": "", "imgurl": "" },
+    {"name": "王项男 ", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "洪庆力 ", "des": "", "blogUrl": "", "imgurl": ""},
     {"name": "张广峰 ", "des": "Go Big,or Go Home", "blogUrl": "https://me.csdn.net/qq_31780525", "imgurl": "./static/img/teamimg/张广峰.jpg"},
-    {"name": "胡森一 ", "des": "数据开发", "blogUrl": "", "imgurl": ""},
-    {"name": "张雅倩 ", "des": "数据开发", "blogUrl": "", "imgurl": ""},
-    {"name": "孙志海 ", "des": "数据开发", "blogUrl": "", "imgurl": ""},
-    {"name": "冯晓玲 ", "des": "数据开发", "blogUrl": "", "imgurl": ""},
-    {"name": "高华超 ", "des": "数据开发", "blogUrl": "", "imgurl": ""},
-    {"name": "孙世有 ", "des": "数据开发", "blogUrl": "", "imgurl": ""},
+    {"name": "胡森一 ", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "张雅倩 ", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "孙志海 ", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "冯晓玲 ", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "高华超 ", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "孙世有 ", "des": "", "blogUrl": "", "imgurl": ""},
     {"name": "韩磊 ", "des": "千里之行始于足下", "blogUrl": "", "imgurl": "./static/img/teamimg/韩磊.jpg"}
   ],
   "数据建模": [
     {"name": "陈博", "anotherName": "Boffett", "des": "加加减减平衡", "blogUrl": "", "imgurl": ""},
-    {"name": "霍勇杰", "des": "模型开发", "blogUrl": "", "imgurl": "./static/img/teamimg/霍勇杰.jpg"},
+    {"name": "霍勇杰", "des": "", "blogUrl": "", "imgurl": "./static/img/teamimg/霍勇杰.jpg"},
     {"name": "张倬荣", "des": "平平安安回家", "blogUrl": "", "imgurl": "./static/img/teamimg/张倬荣.jpg"},
     {"name": "王振磊", "des": "时间在哪里，收获就在哪里", "blogUrl": "https://my.oschina.net/maijinxinyi/", "imgurl": "./static/img/teamimg/王振磊.jpg"},
     {"name": "胡博文", "des": "兢兢业业做事", "blogUrl": "", "imgurl": ""},
@@ -22,61 +22,54 @@
     {"name": "闫龙", "des": "YNWA", "blogUrl": "", "imgurl": ""},
     {"name": "崔凌逍", "des": "踏踏实实做人", "blogUrl": "", "imgurl": "./static/img/teamimg/崔凌逍.jpg"},
     {"name": "王恒玮", "des": "老老实实种地", "blogUrl": "", "imgurl": ""},
-    {"name": "尹杰", "des": "模型开发", "blogUrl": "", "imgurl": "./static/img/teamimg/尹杰.jpg"},
+    {"name": "尹杰", "des": "", "blogUrl": "", "imgurl": "./static/img/teamimg/尹杰.jpg"},
     {"name": "杨波", "des": "不息为体，日新为道", "blogUrl": "", "imgurl": "./static/img/teamimg/杨波.jpg"},
     {"name": "李阳", "des": "健健康康成长", "blogUrl": "", "imgurl": "./static/img/teamimg/李阳.jpg"},
     {"name": "刘斌", "des": "勤勤恳恳搬砖", "blogUrl": "", "imgurl": ""}
   ],
   "数据生产": [
-    {"name": "王健", "des": "生产", "blogUrl": "", "imgurl": ""},
-    {"name": "李根", "des": "生产", "blogUrl": "", "imgurl": ""},
-    {"name": "王灿", "des": "生产", "blogUrl": "", "imgurl": ""},
-    {"name": "程鸣", "des": "生产", "blogUrl": "", "imgurl": ""}
+    {"name": "王健", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "李根", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "王灿", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "程鸣", "des": "", "blogUrl": "", "imgurl": ""}
   ],
   "平台维护":[
     {"name": "王洪星", "anotherName": "小星", "des": "天青色的烟雨", "blogUrl": "", "imgurl": ""},
-    {"name": "吕凯华", "des": "平台运维", "blogUrl": "", "imgurl": ""},
-    {"name": "余澈", "des": "平台运维", "blogUrl": "", "imgurl": ""},
-    {"name": "洪迪", "des": "平台运维", "blogUrl": "", "imgurl": ""},
-    {"name": "史云鹏", "des": "平台运维", "blogUrl": "", "imgurl": ""},
-    {"name": "贾佳", "des": "平台运维", "blogUrl": "", "imgurl": "./static/img/teamimg/贾佳.jpg"}
+    {"name": "吕凯华", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "余澈", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "洪迪", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "史云鹏", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "贾佳", "des": "", "blogUrl": "", "imgurl": "./static/img/teamimg/贾佳.jpg"}
   ],
   "基础设施": [
-    {"name": "李大中", "des": "负责人", "blogUrl": "", "imgurl": ""},
-    {"name": "宋磊", "des": "基础设施运维", "blogUrl": "", "imgurl": ""},
-    {"name": "刘畅", "des": "办公网管理&虚拟桌面运维", "blogUrl": "", "imgurl": ""},
-    {"name": "郑方源", "des": "平台运维&资源管理", "blogUrl": "", "imgurl": ""}
+    {"name": "李大中", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "宋磊", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "刘畅", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "郑方源", "des": "", "blogUrl": "", "imgurl": ""}
   ],
   "智能运维": [
     {"name": "尹正军", "anotherName": "阿军", "des": "AIOps落地，囧囧有力", "blogUrl": "", "imgurl": "./static/img/teamimg/尹正军.jpg"},
-    {"name": "穆纯进", "des": "平台开发", "blogUrl": "", "imgurl": "./static/img/teamimg/穆纯进.jpg"},
-    {"name": "石燕", "des": "平台开发", "blogUrl": "", "imgurl": ""},
-    {"name": "卓宝臻", "des": "平台开发", "blogUrl": "", "imgurl": ""},
+    {"name": "穆纯进", "des": "", "blogUrl": "", "imgurl": "./static/img/teamimg/穆纯进.jpg"},
+    {"name": "卓宝臻", "des": "", "blogUrl": "", "imgurl": ""},
     {"name": "马骁", "anotherName": "Shawn","des": "还是个宝宝", "blogUrl": "", "imgurl": "./static/img/teamimg/马骁.jpg"},
     {"name": "王伟", "des": "火锅爱好者", "blogUrl": "", "imgurl": "./static/img/teamimg/王伟.jpg"},
     {"name": "董亚鹏", "anotherName": "鹏程万里", "des": "一日紫金，终生湖人！", "blogUrl": "", "imgurl": "./static/img/teamimg/董亚鹏.jpg"}
   ],
   "应用研发": [
-    {"name": "谢云龙", "anotherName": "宇尘埃", "des": "高级技术总监", "blogUrl": "", "imgurl": ""},
-    {"name": "樊利安", "des": "技术经理", "blogUrl": "", "imgurl": ""},
-    {"name": "魏巍", "des": "软件开发", "blogUrl": "", "imgurl": ""},
-    {"name": "朱润亚", "des": "淡定看人生 宁静做自我 ", "blogUrl": "https://github.com/zhu18", "imgurl": ""},
-    {"name": "邢玮", "des": "web开发", "blogUrl": "", "imgurl": ""},
-    {"name": "张涛", "des": "只此一生 必须热情", "blogUrl": "", "imgurl": ""},
+    {"name": "谢云龙", "anotherName": "宇尘埃", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "樊利安", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "魏巍", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "朱润亚", "des": "淡定看人生 宁静做自我 ", "blogUrl": "https://github.com/zhu18", "imgurl": "./static/img/teamimg/朱润亚.jpg"},
+    {"name": "邢玮", "des": "我就是我", "blogUrl": "", "imgurl": "./static/img/teamimg/邢玮.jpg"},
+    {"name": "张涛", "des": "只此一生 必须热情", "blogUrl": "", "imgurl": "./static/img/teamimg/张涛.jpg"},
     {"name": "周志国", "des": "勇往直前", "blogUrl": "https://yuyoo0508.github.io", "imgurl": "./static/img/teamimg/周志国.jpg"},
-    {"name": "胡杰", "des": "web开发", "blogUrl": "", "imgurl": ""}
-  ],
-  "PMO": [
-
-  ],
-  "质量管控组": [
-
+    {"name": "胡杰", "des": "", "blogUrl": "", "imgurl": "./static/img/teamimg/胡杰.jpg"}
   ],
   "能力开放": [
-    {"name": "李大中", "des": "高级总监", "blogUrl": "", "imgurl": ""},
-    {"name": "蒲思路", "des": "租户服务", "blogUrl": "", "imgurl": ""},
-    {"name": "陈岳兴", "des": "租户服务", "blogUrl": "", "imgurl": ""},
-    {"name": "于婧", "des": "租户服务", "blogUrl": "", "imgurl": ""},
-    {"name": "李越明", "des": "能力平台改造", "blogUrl": "", "imgurl": ""}
+    {"name": "李大中", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "蒲思路", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "陈岳兴", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "于婧", "des": "", "blogUrl": "", "imgurl": ""},
+    {"name": "李越明", "des": "", "blogUrl": "", "imgurl": ""}
   ]
 }

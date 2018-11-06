@@ -2,9 +2,9 @@
     <div class="">
         <div class="banner-wrapper">
             <header class="text-center" id="home"></header>
-            <p>“换位思考 结果导向 勇于当担”</p>
-            <p >“各有专长 协作协同 共创价值”</p>
-            <p class="banner-text">--让智慧的数据会说话，打造智慧的数据服务能力</p>
+            <p>换位思考 结果导向 勇于当担</p>
+            <p >各有专长 协作协同 共创价值</p>
+            <p class="banner-text">--“让智慧的数据会说话，打造智慧的数据服务能力”</p>
             <a class="arrow-down" @click="arrowDown()"><i class="iconfont icon-xiangxia"></i></a>
         </div>
         <div class="index-wrapper">
@@ -81,6 +81,7 @@
                                     {{item}}
                                 </li>
                             </ul>
+                            <!--<a class="more-btn"><i class="iconfont icon-gengduo"></i></a>-->
                         </div>
                         <div class="train-list-wrapper">
                             <div class="show-wrapper" key="train">
@@ -107,10 +108,12 @@
                                         </div>
                                     </div>
                                 </div>
+                                <p class="go-to-list"><span class="go-to-list-text">查看列表</span><i class="iconfont icon-xiangyou1"></i></p>
                             </div>
                         </div>
 
                     </div>
+                    <div></div>
                 </div>
             </section>
             <section id="technical-weekly" class="sblock sblock-gray  text-center">
@@ -130,15 +133,16 @@
                                     <p class="weekly-title"><a :href="item.url" target="_blank">{{item.title}}</a></p>
                                     <p class="weekly-outline">{{item.outline}}</p>
                                     <p class="weekly-other clearfix">
-                                        <span class="provider-img"  v-show="item.provider">
-                                            <i class="iconfont icon-gerenyonghutouxiang2"></i>
-                                            <img >
+                                        <span class="provider-img"  >
+                                            <i v-show="!item.provider" class="iconfont icon-gerenyonghutouxiang2"></i>
+                                            <img v-show="item.provider" :src="'./static/img/teamimg/'+ item.provider + '.jpg'">
                                         </span>
                                         <span class="provider-name">{{item.provider}}</span>
                                         <span class="weekly-date">{{item.date}}</span>
                                     </p>
                                 </li>
                             </ul>
+                            <p class="go-to-list"><span class="go-to-list-text">查看列表</span><i class="iconfont icon-xiangyou1"></i></p>
                         </div>
                     </div>
                 </div>
@@ -574,36 +578,47 @@
             position: absolute;
             bottom: 100px;
             left: 48%;
-            width: 50px;
-            height: 50px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             background: rgba(3,150,255 ,.6);
             z-index: 11;
             text-align: center;
-            transition: all 1s ease-out;
             cursor: pointer;
             opacity: 0;
-            animation: bounce 3s ease-in-out infinite;
             i {
+                position: absolute;
+                top: 5px;
+                left: 16px;
                 color: rgba(255,255,255,.8);
-                font-size: 30px;
-                line-height: 50px;
-                /*animation:*/
+                opacity: 0.5;
+                font-size: 26px;
+                animation: arrowDown 2s ease-in-out infinite;
+            }
+            &.active {
+                opacity: 1;
+                transition: all .5s ease-in-out 1.5s;
             }
             &:hover {
+                transition: all 2s ease-out 0s;
                 background: $hover;
+                i{
+                    animation-play-state: paused;
+                }
             }
         }
-        .arrow-down.active {
-            opacity: 1;
-            transition: all 1s ease-in-out 1.5s;
-        }
+    }
+    @keyframes arrowDown {
+        0% {top: 5px; opacity: 0.3;}
+        70% {top: 23px; opacity: 1;}
+        100% {top: 5px;opacity: 0.3;}
     }
     .index-wrapper {
         position: relative;
         z-index: 100;
     }
     .cat {
+        position: relative;
         margin: 25px 0 0;
         text-align: center;
         ul li {
@@ -652,9 +667,31 @@
         li:hover ~ li::before {
             left: 0;
         }
+        .more-btn {
+            position: absolute;
+            top: 3px;
+            right: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid #cecece;
+            text-align: center;
+            line-height: 28px;
+            color: #cecece;
+            transition: all .3s ease-out;
+            cursor: pointer;
+            i {
+                font-size: 20px;
+            }
+            &:hover {
+                background: $hover;
+                border: 1px solid $hover;
+                color: #fff;
+            }
+        }
     }
     .sblock {
-        padding: 20px 0 50px 0;
+        padding: 20px 0;
         background: #fff;
         .section-title {
             padding: 20px 0;
@@ -946,7 +983,7 @@
                     }
                     &:hover {
                         .spinner {
-                            box-shadow: 0 0 10px 2px #efefef inset;
+                            box-shadow: 0 0 11px 1px #efefef inset;
                             /*transform: rotate(180deg);*/
                         }
                         .team-img {
@@ -1085,6 +1122,7 @@
         }
     }
     .train-list-wrapper {
+        margin-top: 20px;
         .train-item {
             position: relative;
             overflow: hidden;
@@ -1346,26 +1384,22 @@
                     float: left;
                     width: 24px;
                     height: 24px;
+                    border-radius: 50%;
+                    text-align: center;
                     overflow: hidden;
                     i {
                         font-size: 18px;
                         color: rgba(0,0,0,0.4);
                     }
-                    &:before {
-                        position: absolute;
-                        content: '';
-                        z-index: 2;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        left: 0;
-                        border-radius: 50%;
+                    img {
+                        width: 100%;
                     }
+
                 }
                 .provider-name {
                     float: left;
                     margin-left: 10px;
-                    color: #3d3d3d;
+                    color: #8a8a8a;
                 }
                 .weekly-date {
                     float: right;
@@ -1477,6 +1511,45 @@
     }
     .scrollToTop.active {
         opacity: 1;
+    }
+    .go-to-list {
+        position: relative;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        margin: 0 auto;
+        border-radius: 5px;
+        background: #efefef;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all .5s ease-out;
+        .go-to-list-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 40px;
+            left: 0;
+            color: #fff;
+            transition: all .3s ease-out;
+        }
+        i {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            color: #ccc;
+            font-size: 20px;
+            transition: all .3s ease-out;
+        }
+        &:hover {
+            background: $hover;
+            .go-to-list-text {
+                top: 0;
+            }
+            i {
+                top: -40px;
+            }
+        }
     }
     @media screen and (max-width: 768px){
         .banner-wrapper{
