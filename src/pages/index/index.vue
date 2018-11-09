@@ -77,7 +77,7 @@
                     <div class="train-wrapper">
                         <div class="cat">
                             <ul>
-                                <li v-for="(item, index) in trainBtn" :class="{active:trainIndex===index}">
+                                <li v-for="(item, index) in trainBtn" :class="{active:trainIndex===index}" @click="handleClickTrain(item, index)">
                                     {{item}}
                                 </li>
                             </ul>
@@ -108,7 +108,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="go-to-list"><span class="go-to-list-text">查看列表</span><i class="iconfont icon-youjiantou"></i></p>
+                                <p class="go-to-list" v-show="trainArr.length > 0"><span class="go-to-list-text">查看列表</span><i class="iconfont icon-youjiantou"></i></p>
                             </div>
                         </div>
 
@@ -122,7 +122,7 @@
                     <div class="tech-wrapper">
                         <div class="cat">
                             <ul>
-                                <li v-for="(item, index) in weeklyBtn" :class="{active:weeklyIndex===index}">
+                                <li v-for="(item, index) in weeklyBtn" :class="{active:weeklyIndex===index}" @click="handleClickWeekly(item, index)">
                                     {{item}}
                                 </li>
                             </ul>
@@ -142,7 +142,7 @@
                                     </p>
                                 </li>
                             </ul>
-                            <p class="go-to-list"><span class="go-to-list-text">查看列表</span><i class="iconfont icon-youjiantou"></i></p>
+                            <p class="go-to-list" v-show="weeklyArr.length > 0"><span class="go-to-list-text">查看列表</span><i class="iconfont icon-youjiantou"></i></p>
                         </div>
                     </div>
                 </div>
@@ -153,7 +153,7 @@
                     <div class="tech-wrapper">
                         <div class="cat">
                             <ul>
-                                <li v-for="(item, index) in subsideBtn" :class="{active:subsideIndex===index}">
+                                <li v-for="(item, index) in subsideBtn" :class="{active:subsideIndex===index}" @click="handleClickSubside(item, index)">
                                     {{item}}
                                 </li>
                             </ul>
@@ -532,6 +532,33 @@
             },
             arrowDown(){
               jQuery("html, body").animate({scrollTop: this.height6}, 1000);
+            },
+            handleClickWeekly(name, index){
+              this.weeklyIndex = index;
+              let weeklyArr = weekly.data;
+              weeklyArr.map(item => {
+                if(item.type == name){
+                  this.weeklyArr = item.details;
+                }
+              })
+            },
+            handleClickSubside(name, index){
+              this.subsideIndex = index;
+              let subsideArr = subside.data;
+              subsideArr.map(item => {
+                if(item.type == name){
+                  this.subsideArr = item.details;
+                }
+              })
+            },
+            handleClickTrain(name,index){
+              this.trainIndex = index;
+              let trainArr = trainPlan.data;
+              trainArr.map(item => {
+                if(item.type == name){
+                  this.trainArr = item.details;
+                }
+              })
             }
         }
     }
