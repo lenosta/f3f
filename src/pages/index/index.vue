@@ -1640,7 +1640,7 @@
             .team-list {
                 li {
                     width: 70px;
-                    margin: 0 10px;
+                    margin: 0 5px;
                     border-radius: 50%;
                     a {
                         display: inline-block;
