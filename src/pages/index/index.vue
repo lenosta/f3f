@@ -292,9 +292,9 @@
             this.initTrainPlan();
             this.initWeekly();
             this.initSubside();
-          jQuery(".main").click(function(){
-            jQuery("[data-target='#bs-example-navbar-collapse-1']").click();
-          })
+//          jQuery(".main").click(function(){
+////            jQuery("[data-target='#bs-example-navbar-collapse-1']").click();
+//          })
         },
         components: {},
         computed: {
