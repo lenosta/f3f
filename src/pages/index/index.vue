@@ -292,9 +292,10 @@
             this.initTrainPlan();
             this.initWeekly();
             this.initSubside();
-//          jQuery(".main").click(function(){
-////            jQuery("[data-target='#bs-example-navbar-collapse-1']").click();
-//          })
+          jQuery(".main").click(function(){
+            jQuery("[data-target='#bs-example-navbar-collapse-1']").addClass("collapsed").attr("aria-expanded",false);
+            jQuery("#bs-example-navbar-collapse-1").removeClass("in").attr({"aria-expanded":false});
+          })
         },
         components: {},
         computed: {
