@@ -1638,8 +1638,24 @@
         .team-list-wrapper {
             .team-list {
                 li {
-                    width: 80px;
-                    margin: 0 20px;
+                    width: 70px;
+                    margin: 0 10px;
+                    border-radius: 50%;
+                    a {
+                        display: inline-block;
+                        .spinner {
+                            width: 70px;
+                            height: 70px;
+                            z-index: 10;
+                        }
+                        .team-img {
+                            width: 70px;
+                            height: 70px;
+                            .iconfont {
+                                font-size: 60px;
+                            }
+                        }
+                    }
                 }
             }
         }
