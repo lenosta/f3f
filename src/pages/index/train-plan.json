@@ -20,7 +20,7 @@
         {
           "theme": "可视化echarts图表配置",
           "tranier": "张涛",
-          "time": "2018／10／31",
+          "time": "2018/10/31",
           "place": "大会议室",
           "content": "1、Echarts介绍。2、Echarts使用。",
           "trainType": "可视化",
@@ -31,43 +31,17 @@
           "videourl": "http://v.youku.com/v_show/id_XMzg5Nzc3NjUyNA==.html?spm=a2h3j.8428770.3416059.1"
         },
         {
-          "theme": "可视化图表（1-3）",
-          "tranier": "张涛，周志国，胡杰",
-          "time": "未定",
+          "theme": "可视化图表第二讲-D3",
+          "tranier": "周志国",
+          "time": "2018/11/07",
           "place": "大会议室",
-          "content": "暂无",
+          "content": "1、d3 简介。2、d3 核心操作。3、d3 layout。",
           "trainType": "可视化",
-          "imgurl": "",
-          "keyword": "",
-          "status": false,
-          "docurl": "",
-          "videourl": ""
-        },
-        {
-          "theme": "可视化svg系列02",
-          "tranier": "朱润亚",
-          "time": "未定",
-          "place": "大会议室",
-          "content": "暂无",
-          "trainType": "可视化",
-          "imgurl": "",
-          "keyword": "D3，vivus",
-          "status": false,
-          "docurl": "",
-          "videourl": ""
-        },
-        {
-          "theme": "可视化webgl系列03",
-          "tranier": "朱润亚",
-          "time": "未定",
-          "place": "大会议室",
-          "content": "暂无",
-          "trainType": "可视化",
-          "imgurl": "",
-          "keyword": "three,babylon,tween,GSAP",
-          "status": false,
-          "docurl": "",
-          "videourl": ""
+          "imgurl": "./static/img/trainPlan/d3.jpeg",
+          "keyword": "D3",
+          "status": true,
+          "docurl": "https://github.com/UnicomBigData/d3-train/blob/master/README.md",
+          "videourl": "http://v.youku.com/v_show/id_XMzkwOTE1ODEzMg==.html?spm=a2hzp.8244740.0.0"
         },
         {
           "theme": "github-travis 自动化",

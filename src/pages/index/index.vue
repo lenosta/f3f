@@ -474,6 +474,14 @@
                       listArr.push(item);
                     }
                 });
+                var compare = function(pro){
+                    return function(a, b){
+                      let value1 = a[pro];
+                      let value2 = b[pro];
+                      return new Date(value2).getTime() - new Date(value1).getTime();
+                    }
+                }
+                listArr.sort(compare('time'));
                 this.trainArr = listArr;
                 let width = document.body.clientWidth;
                 if(width <= 768){
