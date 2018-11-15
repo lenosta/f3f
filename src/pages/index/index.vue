@@ -286,12 +286,7 @@
 
           this.height6 = jQuery("#tech-standard").offset().top;
           window.addEventListener('scroll',this.handleScroll,true);
-            this.initVanta();
-            this.initTeam();
-            this.initTechCategories();
-            this.initTrainPlan();
-            this.initWeekly();
-            this.initSubside();
+          this.initVanta();
           jQuery(".main").click(function(){
             jQuery("[data-target='#bs-example-navbar-collapse-1']").addClass("collapsed").attr("aria-expanded",false);
             jQuery("#bs-example-navbar-collapse-1").removeClass("in").attr({"aria-expanded":false});
@@ -315,27 +310,31 @@
                 }
 
                 if(this.height6 -200 < this.scrollTop){
+                  this.initTechCategories();
                   jQuery("#nav li").eq(1).addClass("active").siblings().removeClass("active");
-//                  jQuery("#tech-standard").addClass("tech-standard");
                   this.height0 = jQuery("#relative-tech").offset().top;
                   if(this.height0 -200  < this.scrollTop) {
                     jQuery("#nav li ").eq(2).addClass("active").siblings().removeClass("active");
                     jQuery("#relative-tech").addClass("relative-tech");
                     this.height1 = jQuery("#train-plan").offset().top;
                     if(this.height1 -200 < this.scrollTop){
+                      this.initTrainPlan();
                       jQuery("#nav li ").eq(3).addClass("active").siblings().removeClass("active");
 //                    this.show1 = true;
                       jQuery("#train-plan").addClass("train-plan");
                       this.height2 = jQuery("#technical-weekly").offset().top;
                       if(this.height2 -200 < this.scrollTop){
+                        this.initWeekly();
                         jQuery("#nav li ").eq(4).addClass("active").siblings().removeClass("active");
                         jQuery("#technical-weekly").addClass("technical-weekly");
                         this.height3 = jQuery("#tech-subside").offset().top;
                         if(this.height3 -200 < this.scrollTop){
+                          this.initSubside();
                           jQuery("#nav li ").eq(5).addClass("active").siblings().removeClass("active");
                           jQuery("#tech-subside").addClass("tech-subside");
                           this.height4 = jQuery("#team").offset().top;
                           if(this.height4 - 200 < this.scrollTop){
+                            this.initTeam();
                             jQuery("#nav li ").eq(6).addClass("active").siblings().removeClass("active");
                           }
                         }
@@ -423,7 +422,6 @@
                     });
                 });
                 this.techCategories = techCategoryArr;
-                console.log(this.techCategories)
 
                 /**
                  * 将一个一维数组转换成二维数据

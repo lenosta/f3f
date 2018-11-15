@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import echarts from 'echarts'
 import './assets/css/index.sass'
 // 引入jquery
 import jQuery from 'jquery'
