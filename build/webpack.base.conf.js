@@ -46,11 +46,15 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 1000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
-        }
+        loader:['url-loader?limit=10000&name='+utils.assetsPath('img/[name].[hash:7].[ext]'),
+        'image-webpack-loader'
+        ]
+
+        // loader: 'url-loader',
+        // options: {
+        //   limit: 1000000,
+        //   name: utils.assetsPath('img/[name].[hash:7].[ext]')
+        // }
       },
 
       {

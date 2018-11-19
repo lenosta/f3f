@@ -86,7 +86,47 @@
     },
     {
       "type": "中台&微服务",
-      "details": []
+      "details": [
+        {
+          "theme": "SpringCloud基础",
+          "tranier": "陈东平",
+          "time": "2018/11/15",
+          "place": "大会议室",
+          "content": "讲述了什么是微服务及SpringCloud入门基础",
+          "trainType": "应用",
+          "imgurl": "./static/img/trainPlan/chendongping.jpeg",
+          "keyword": "SpringCloud",
+          "status": true,
+          "docurl": "https://github.com/chendplanghua/Spring/blob/master/springcloud.docx",
+          "videourl": "http://v.youku.com/v_show/id_XMzkyMTU3MDc3Mg==.html"
+        },
+        {
+          "theme": "",
+          "tranier": "樊利安",
+          "time": "2018/11/15",
+          "place": "大会议室",
+          "content": "",
+          "trainType": "应用",
+          "imgurl": "./static/img/trainPlan/fanlian.jpeg",
+          "keyword": "",
+          "status": false,
+          "docurl": "",
+          "videourl": ""
+        },
+        {
+          "theme": "",
+          "tranier": "魏巍",
+          "time": "2018/11/15",
+          "place": "大会议室",
+          "content": "",
+          "trainType": "应用",
+          "imgurl": "./static/img/trainPlan/weiwei.jpeg",
+          "keyword": "",
+          "status": false,
+          "docurl": "",
+          "videourl": ""
+        }
+      ]
     },
     {
       "type": "模型&机器学习",

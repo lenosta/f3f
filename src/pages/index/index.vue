@@ -283,7 +283,11 @@
             }
         },
         mounted() {
-
+            this.initTechCategories();
+            this.initTrainPlan();
+            this.initWeekly();
+            this.initSubside();
+            this.initTeam();
           this.height6 = jQuery("#tech-standard").offset().top;
           window.addEventListener('scroll',this.handleScroll,true);
           this.initVanta();
@@ -308,9 +312,8 @@
                 if(0 < this.scrollTop < this.height6){
                 jQuery("#nav li ").eq(0).addClass("active").siblings().removeClass("active");
                 }
-
+                
                 if(this.height6 -200 < this.scrollTop){
-                  this.initTechCategories();
                   jQuery("#nav li").eq(1).addClass("active").siblings().removeClass("active");
                   this.height0 = jQuery("#relative-tech").offset().top;
                   if(this.height0 -200  < this.scrollTop) {
@@ -318,23 +321,19 @@
                     jQuery("#relative-tech").addClass("relative-tech");
                     this.height1 = jQuery("#train-plan").offset().top;
                     if(this.height1 -200 < this.scrollTop){
-                      this.initTrainPlan();
                       jQuery("#nav li ").eq(3).addClass("active").siblings().removeClass("active");
 //                    this.show1 = true;
                       jQuery("#train-plan").addClass("train-plan");
                       this.height2 = jQuery("#technical-weekly").offset().top;
                       if(this.height2 -200 < this.scrollTop){
-                        this.initWeekly();
                         jQuery("#nav li ").eq(4).addClass("active").siblings().removeClass("active");
                         jQuery("#technical-weekly").addClass("technical-weekly");
                         this.height3 = jQuery("#tech-subside").offset().top;
                         if(this.height3 -200 < this.scrollTop){
-                          this.initSubside();
                           jQuery("#nav li ").eq(5).addClass("active").siblings().removeClass("active");
                           jQuery("#tech-subside").addClass("tech-subside");
                           this.height4 = jQuery("#team").offset().top;
                           if(this.height4 - 200 < this.scrollTop){
-                            this.initTeam();
                             jQuery("#nav li ").eq(6).addClass("active").siblings().removeClass("active");
                           }
                         }
