@@ -100,31 +100,32 @@
           "docurl": "https://github.com/chendplanghua/Spring/blob/master/springcloud.docx",
           "videourl": "http://v.youku.com/v_show/id_XMzkyMTU3MDc3Mg==.html"
         },
+        
         {
-          "theme": "",
+          "theme": "JAVA开发规范（一）编程规范",
           "tranier": "樊利安",
           "time": "2018/11/15",
           "place": "大会议室",
-          "content": "",
+          "content": "阿里巴巴JAVA开发规范解读以及在本公司的应用规范",
           "trainType": "应用",
           "imgurl": "./static/img/trainPlan/fanlian.jpeg",
-          "keyword": "",
-          "status": false,
+          "keyword": "JAVA开发规范",
+          "status": true,
           "docurl": "",
-          "videourl": ""
-        },
+          "videourl": "https://v.qq.com/x/page/h0797s05vfm.html"
+       },
         {
-          "theme": "",
+          "theme": "swagger技术应用",
           "tranier": "魏巍",
           "time": "2018/11/15",
           "place": "大会议室",
-          "content": "",
+          "content": "swagger介绍以及在springboot中的配置和使用",
           "trainType": "应用",
           "imgurl": "./static/img/trainPlan/weiwei.jpeg",
-          "keyword": "",
-          "status": false,
-          "docurl": "",
-          "videourl": ""
+          "keyword": "swagger,springboot",
+          "status": true,
+          "docurl": "https://wenku.baidu.com/view/db59c5f1bdeb19e8b8f67c1cfad6195f302be856",
+          "videourl": "https://v.qq.com/x/page/o07978ldbur.html"
         }
       ]
     },
