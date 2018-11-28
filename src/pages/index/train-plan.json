@@ -132,6 +132,24 @@
     {
       "type": "模型&机器学习",
       "details": []
+    },
+    {
+      "type": "标准&研发",
+      "details": [
+        {
+          "theme": "规范标准&软件研发",
+          "tranier": "谢云龙",
+          "time": "2018/11/22",
+          "place": "大会议室",
+          "content": "1、软件研发需要知道的规范体系与技术标准。2、大数据公司现行的管理规范与敏捷开发。3、部门现三表一库的管理实践与一些思考。",
+          "trainType": "规范",
+          "imgurl": "./static/img/trainPlan/codeslstandards.jpeg",
+          "keyword": "规范，敏捷开发",
+          "status": true,
+          "docurl": "../static/trainPlanDoc/规范标准&软件研发（20181122）.pdf",
+          "videourl": "http://list.youku.com/albumlist/show/id_51973661.html"
+        }
+      ]
     }
   ]
 }
