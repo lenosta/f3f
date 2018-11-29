@@ -81,6 +81,19 @@
           "status": true,
           "docurl": "https://github.com/UnicomBigData/test/blob/master/selenium-webdriver%E5%AE%9E%E7%8E%B0webpack%E9%A1%B9%E7%9B%AE%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95.md",
           "videourl": "http://v.youku.com/v_show/id_XMzg5NDc3Nzc0NA==.html"
+        },
+        {
+          "theme": "GSAP 01.TweenMax",
+          "tranier": "朱润亚",
+          "time": "2018/11/28",
+          "place": "大会议室",
+          "content": "1、TweenMax介绍。2、TweenMax简单使用。3、TweenLineMax动画效果实践。",
+          "trainType": "动画",
+          "imgurl": "./static/img/trainPlan/TweenMax01.jpeg",
+          "keyword": "GSAP，TweenMax",
+          "status": true,
+          "docurl": "https://greensock.com/docs",
+          "videourl": "https://v.youku.com/v_show/id_XMzk0MDYzMzM2NA==.html"
         }
       ]
     },
