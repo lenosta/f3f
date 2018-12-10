@@ -2,9 +2,9 @@
     <div class="">
         <div class="banner-wrapper">
             <header class="text-center" id="home"></header>
-            <p>换位思考 结果导向 勇于当担</p>
-            <p >各有专长 协作协同 共创价值</p>
-            <p class="banner-text">--“让智慧的数据会说话，打造智慧的数据服务能力”</p>
+            <p>换位思考 结果导向 勇于担当</p>
+            <p >各有专长 协同协作 共创价值</p>
+            <p class="banner-text">--“打造智慧的数据服务能力，让数据会说话”</p>
             <a class="arrow-down" @click="arrowDown()"><i class="iconfont icon-xiangxia"></i></a>
         </div>
         <div class="index-wrapper">
@@ -14,8 +14,8 @@
                     <div class="tech-wrapper">
                         <div class="cat">
                             <ul>
-                                <li v-for="item in techCategories" :class="{active:standardTechIndex===item.index}"
-                                    @click="standardTechIndex=item.index">
+                                <li v-for="(item, index) in techCategories" :class="{active:standardTechIndex===item.index}"
+                                    @click="standardTechIndex=item.index" :key="index">
                                     {{item.name}}
                                 </li>
                             </ul>
@@ -23,7 +23,7 @@
                         <div class="show-wrapper">
                             <div class="row " v-for="(parentItem, index) in techCategories[standardTechIndex].standards" :key="index">
                                 <div class="col-lg-4 col-md-4 tech-block inline"
-                                     v-for="item in parentItem">
+                                     v-for="(item, index) in parentItem" :key="index">
                                     <a :href="item.url" target="_blank">
                                         <div class="icon">
                                             <i class="iconfont" :class="item.iconClass"></i>
@@ -45,8 +45,8 @@
                     <div class="relative-wrapper">
                         <div class="cat">
                             <ul>
-                                <li v-for="item in techCategories" :class="{active:relativeTechIndex===item.index}"
-                                    @click="relativeTechIndex=item.index">
+                                <li v-for="(item, index) in techCategories" :class="{active:relativeTechIndex===item.index}"
+                                    @click="relativeTechIndex=item.index" :key="index">
                                     {{item.name}}
                                 </li>
                             </ul>
@@ -54,13 +54,13 @@
                         <div class="show-wrapper" key="relative">
                             <div  class="row" v-for="(parentItem, index) in techCategories[relativeTechIndex].relativeTechs" :key="index">
                                 <div class="col-md-4 tech-block"
-                                     v-for="item in parentItem">
+                                     v-for="(item, index) in parentItem" :key="index">
                                     <div class="icon">
                                         <i class="iconfont" :class="item.iconClass"></i>
                                     </div>
                                     <div class="title">{{item.name}}</div>
                                     <div class="content">
-                            <span v-for="child in item.items"><a :href="child.url"
+                            <span v-for="(child, indexChild) in item.items" :key="indexChild"><a :href="child.url"
                                                                  target="_blank">{{child.name}}</a></span>
                                     </div>
 
@@ -77,7 +77,7 @@
                     <div class="train-wrapper">
                         <div class="cat">
                             <ul>
-                                <li v-for="(item, index) in trainBtn" :class="{active:trainIndex===index}" @click="handleClickTrain(item, index)">
+                                <li v-for="(item, index) in trainBtn" :class="{active:trainIndex===index}" @click="handleClickTrain(item, index)" :key="index">
                                     {{item}}
                                 </li>
                             </ul>
@@ -86,7 +86,7 @@
                         <div class="train-list-wrapper">
                             <div class="show-wrapper" key="train">
                                 <div  class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"  v-for="item1 in trainArr">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"  v-for="(item1, index1) in trainArr" :key="index1">
                                         <div :class="item1.status ? 'train-item' : 'train-item train-item-unfinshed'">
                                             <div class="train-icon"  v-show="item1.imgurl == ''">
                                                 <i class="iconfont icon-icontianjiatupian"></i>
@@ -122,7 +122,7 @@
                     <div class="tech-wrapper">
                         <div class="cat">
                             <ul>
-                                <li v-for="(item, index) in weeklyBtn" :class="{active:weeklyIndex===index}" @click="handleClickWeekly(item, index)">
+                                <li v-for="(item, index) in weeklyBtn" :class="{active:weeklyIndex===index}" @click="handleClickWeekly(item, index)" :key="index">
                                     {{item}}
                                 </li>
                             </ul>
@@ -153,7 +153,7 @@
                     <div class="tech-wrapper">
                         <div class="cat">
                             <ul>
-                                <li v-for="(item, index) in subsideBtn" :class="{active:subsideIndex===index}" @click="handleClickSubside(item, index)">
+                                <li v-for="(item, index) in subsideBtn" :class="{active:subsideIndex===index}" @click="handleClickSubside(item, index)" :key="index">
                                     {{item}}
                                 </li>
                             </ul>
@@ -166,8 +166,8 @@
                                         <h2 class="subside-name">{{item.name}}</h2>
                                     </div>
                                     <div class="subside-bottom">
-                                        <ul v-for="item1 in item.children" class="text-center">
-                                            <li v-for="item2 in item1"><a :href="item2.url">{{item2.name}}</a></li>
+                                        <ul v-for="(item1, index1) in item.children" class="text-center" :key="index1">
+                                            <li v-for="(item2,index2) in item1" :key="index2"><a :href="item2.url">{{item2.name}}</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -177,7 +177,7 @@
                 </div>
             </section>
             <div class="dots-wrapper">
-                <p class="dots-text">各有专长 协作协同 共创价值</p>
+                <p class="dots-text">各有专长 协同协作 共创价值</p>
                 <div class="dots" id="dots"></div>
             </div>
 
@@ -190,14 +190,14 @@
                         <div class="col-xs-12 col-md-12 col-sm-12">
                             <ul class="team-filter-btn">
                                 <li v-for="(item,index) in teamType" @click="handleClickTeamType(item,index)"
-                                    :class="tabIndex === index ? 'active': ''">
+                                    :class="tabIndex === index ? 'active': ''" :key='index'>
                                     {{item}}
                                 </li>
                             </ul>
                             <div class="show-wrapper" key="team">
                                 <div id="teamListWrapper" class="team-list-wrapper clearfix show-transition" :style="{height: height+'px'}" >
                                     <ul id="teamList" class="team-list clearfix">
-                                        <li :class="item.className" v-for="(item, index) in teamArr">
+                                        <li :class="item.className" v-for="(item, index) in teamArr" :key="index">
                                             <a :href="item.blogUrl ? item.blogUrl : ''">
                                                 <div class="spinner"></div>
                                                 <div class="team-img" ><i v-show="item.imgurl == ''" class="iconfont icon-gerenyonghutouxiang2"></i><img v-show="item.imgurl" :src="item.imgurl"></div>
