@@ -10,7 +10,7 @@ import jQuery from 'jquery'
 import './assets/js/bootstrap/js/bootstrap.min.js'
 import './assets/js/bootstrap/css/bootstrap.min.css'
 import './assets/css/main.scss'
-// 引入iconfont
+// 引入iconfont1
 import './assets/iconfont/iconfont.css'
 
 
