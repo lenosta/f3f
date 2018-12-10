@@ -4,7 +4,7 @@
             <header class="text-center" id="home"></header>
             <p>换位思考 结果导向 勇于担当</p>
             <p >各有专长 协同协作 共创价值</p>
-            <p class="banner-text">--“打造智慧的数据服务能力，让数据会说话”</p>
+            <p class="banner-text">--“打造智慧的数据服务能力，让数据会说话!”</p>
             <a class="arrow-down" @click="arrowDown()"><i class="iconfont icon-xiangxia"></i></a>
         </div>
         <div class="index-wrapper">
