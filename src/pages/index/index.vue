@@ -8,6 +8,7 @@
             <a class="arrow-down" @click="arrowDown()"><i class="iconfont icon-xiangxia"></i></a>
         </div>
         <div class="index-wrapper">
+            <!--技术规范-->
             <section id="tech-standard" class="sblock  text-center">
                 <div class="container">
                     <h1 class="section-title"><span>技术规范</span></h1>
@@ -39,20 +40,24 @@
                     </div>
                 </div>
             </section>
+            <!--相关技术-->
             <section id="relative-tech" class="sblock sblock-gray text-center">
                 <div class="container">
                     <h1 class="section-title"><span>相关技术</span></h1>
                     <div class="relative-wrapper">
                         <div class="cat">
                             <ul>
-                                <li v-for="(item, index) in techCategories" :class="{active:relativeTechIndex===item.index}"
+                                <li v-for="(item, index) in techCategories"
+                                    :class="{active:relativeTechIndex===item.index}"
                                     @click="relativeTechIndex=item.index" :key="index">
                                     {{item.name}}
                                 </li>
                             </ul>
                         </div>
                         <div class="show-wrapper" key="relative">
-                            <div  class="row" v-for="(parentItem, index) in techCategories[relativeTechIndex].relativeTechs" :key="index">
+                            <div class="row"
+                                 v-for="(parentItem, index) in techCategories[relativeTechIndex].relativeTechs"
+                                 :key="index">
                                 <div class="col-md-4 tech-block"
                                      v-for="(item, index) in parentItem" :key="index">
                                     <div class="icon">
@@ -60,17 +65,16 @@
                                     </div>
                                     <div class="title">{{item.name}}</div>
                                     <div class="content">
-                            <span v-for="(child, indexChild) in item.items" :key="indexChild"><a :href="child.url"
-                                                                 target="_blank">{{child.name}}</a></span>
+                                        <span v-for="(child, indexChild) in item.items" :key="indexChild">
+                                            <a :href="child.url?child.url:'javascript:void(0);'" target="_blank">{{child.name}}</a>
+                                        </span>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
             <section id="train-plan" class="sblock  text-center">
                 <div class="container">
                     <h1 class="section-title"><span>培训计划</span></h1>
@@ -345,13 +349,15 @@
             },
             initVanta() {
                 VANTA.NET({
-                  el: "#home",
-                  color: 'rgba(3,150,255,1)',
-                  backgroundColor: 'rgba(5,23,63,1)',
-                  points: 10.00,
-                  maxDistance: 27.00,
-                  spacing: 14.00,
-                  backgroundAlpha: 0
+                    el: "#home",
+//                    color: 'rgba(3,150,255,1)',
+                    color: 0x7e8da,
+//                  backgroundColor: 'rgba(5,23,63,1)',
+                    backgroundColor: 'black',
+                    points: 11.00,
+                    maxDistance: 18.00,
+                    spacing: 15.00,
+//                    backgroundAlpha: 0
                 });
                 jQuery(".banner-wrapper p").eq(0).addClass("cultural-consensus");
                 jQuery(".banner-wrapper p").eq(1).addClass("development-goals");
