@@ -34,7 +34,7 @@
                 <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
               </svg>
             </li>
-            <li>
+            <li class="active">
               <a  class="navbar-li" href="#tech-standard"  data-href="tech-standard">技术规范</a>
               <svg class="ripple-obj" id="js-ripple">
                 <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
@@ -150,7 +150,8 @@
         &:hover {
           a {
             background: transparent;
-            color: $hover;
+            /*<!--color: $hover;-->*/
+            color: rgba(125,250,251,1);
             &:before {
               border-top: 3px solid $hover;
             }
@@ -158,8 +159,10 @@
         }
         &.active {
           a {
-            background: rgba(3,96,162,.7);
-            color: #8fd1ff;
+            /*background: rgba(3,96,162,.7);*/
+            background: rgba(125,250,251,.4);
+            /*color: #8fd1ff;*/
+            color: #fff;
           }
         }
         svg {
@@ -191,7 +194,7 @@
         &:hover {
           a {
             background: transparent;
-            color: $hover;
+            color: $fonthover;
             &:before {
               border-top: 3px solid $hover;
             }
@@ -199,8 +202,10 @@
         }
         &.active {
           a {
-            background: rgba(0,0,0,.3);
-            color: $hover;
+            /*<!--background: rgba(0,0,0,.3);-->*/
+            /*<!--color: $hover;-->*/
+            background: rgba(125,250,251,.4);
+            color: #fff;
           }
         }
         svg {

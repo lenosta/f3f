@@ -1,7 +1,7 @@
 // 颜色定义规范
 $cl-bg-ct: rgba(102, 175, 255, .2);
 $cl-text: #fff;
-$cl-bg-btn:blue;
+$cl-bg-btn:rgba(125,250,251,1);//blue;
 $cl-text1:#333; 
 
 //字体定义规范
@@ -20,7 +20,10 @@ $width-page: 80%;
 // 页面颜色
 $header-footer: rgba(33,33,33,.8);
 //$hover: #00c1de;
-$hover: rgba(3,150,255 ,1);
+//$hover: rgba(3,150,255 ,1);
+$hover: rgba(125,250,251,.5);
+$fonthover:rgba(125,250,251,.9);
+$tabhover:rgba(8,210,212,1);
 //$mask: rgba(0,194,222,.5);
 $mask: rgba(0,0,0,.5);
 $section-title: #333;

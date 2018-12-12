@@ -3,7 +3,7 @@
         <div class="banner-wrapper">
             <header class="text-center" id="home"></header>
             <p>换位思考 结果导向 勇于担当</p>
-            <p >各有专长 协同协作 共创价值</p>
+            <p>各有专长 协同协作 共创价值</p>
             <p class="banner-text">--“打造智慧的数据服务能力，让数据会说话!”</p>
             <a class="arrow-down" @click="arrowDown()"><i class="iconfont icon-xiangxia"></i></a>
         </div>
@@ -27,6 +27,7 @@
                                      v-for="(item, index) in parentItem" :key="index">
                                     <a :href="item.url" target="_blank">
                                         <div class="icon">
+                                            <div class="circle"></div>
                                             <i class="iconfont" :class="item.iconClass"></i>
                                         </div>
                                         <div class="content">
@@ -75,6 +76,7 @@
                     </div>
                 </div>
             </section>
+            <!--培训计划-->
             <section id="train-plan" class="sblock  text-center">
                 <div class="container">
                     <h1 class="section-title"><span>培训计划</span></h1>
@@ -120,6 +122,7 @@
                     <div></div>
                 </div>
             </section>
+            <!--技术周刊-->
             <section id="technical-weekly" class="sblock sblock-gray  text-center">
                 <div class="container">
                     <h1 class="section-title"><span>技术周刊</span></h1>
@@ -151,6 +154,7 @@
                     </div>
                 </div>
             </section>
+            <!--技术沉淀-->
             <section id="tech-subside" class="sblock   text-center">
                 <div class="container">
                     <h1 class="section-title"><span>技术沉淀</span></h1>
@@ -354,9 +358,9 @@
                     color: 0x7e8da,
 //                  backgroundColor: 'rgba(5,23,63,1)',
                     backgroundColor: 'black',
-                    points: 11.00,
+                    points: 10.00,
                     maxDistance: 18.00,
-                    spacing: 15.00,
+                    spacing: 14.00,
 //                    backgroundAlpha: 0
                 });
                 jQuery(".banner-wrapper p").eq(0).addClass("cultural-consensus");
@@ -365,7 +369,7 @@
                 jQuery(".arrow-down").addClass("active");
                 VANTA.BIRDS({
                     el: "#dots",
-                    backgroundColor: 0x0396ff,
+                    backgroundColor: 0xdb9ae,//0x0396ff,
                     color1: 0xffffff,
                     color2: 0xffffff,
                     wingSpan: 10.00,
@@ -373,7 +377,7 @@
                     separation: 51.00,
                     alignment: 70.00,
                     cohesion: 73.00,
-                    backgroundAlpha: 0
+//                    backgroundAlpha: 0
                 })
             },
             initTeam() {
@@ -633,7 +637,8 @@
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            background: rgba(3,150,255 ,.6);
+            /*background: rgba(3,150,255 ,.6);*/
+            background: rgba(125,250,251,.6);
             z-index: 11;
             text-align: center;
             cursor: pointer;
@@ -650,13 +655,15 @@
             }
             &.active {
                 opacity: 1;
-                transition: all .5s ease-in-out 1.5s;
+                transition: all .5s ease-in-out 1s;
             }
             &:hover {
-                transition: all 2s ease-out 0s;
-                background: $hover;
+                transition: all 1s ease-out 0s;
+                /*<!--background: $hover;-->*/
+                background: rgba(125,250,251,.8); ;
                 i{
-                    animation-play-state: paused;
+                    /*animation-play-state: paused;*/
+                    animation: arrowDown 1s infinite;
                 }
             }
         }
@@ -690,30 +697,29 @@
                 left: 100%;
                 width: 0;
                 height: 100%;
-                border-bottom: 2px solid $hover;
+                border-bottom: 2px solid $tabhover;
                 transition: all .2s linear;
             }
             &:hover {
-                color: $hover;
+                color: $tabhover;
             }
             &:hover:before {
                 width: 100%;
                 left: 0;
                 top: 0;
                 transition-delay: 0.1s;
-                border-bottom-color: $hover;
+                border-bottom-color: $tabhover;
                 z-index: 1;
             }
             &.active {
-                color: $hover;
+                color: $tabhover;
             }
             &.active:before {
-
                 width: 100%;
                 left: 0;
                 top: 0;
                 transition-delay: 0.1s;
-                border-bottom-color: $hover;
+                border-bottom-color: $tabhover;
                 z-index: 1;
             }
         }
@@ -806,6 +812,7 @@
         opacity: 0;
         transition: all 1s ease-out;
         .icon {
+            position: relative;
             margin: auto;
             float: none;
             width: 70px;
@@ -814,13 +821,14 @@
             text-align: center;
             font-size: 2em;
             border-radius: 50%;
-            border: 1px solid #ddd;
+            /*border: 1px solid #ddd;*/
             i {
                 color: #888;
             }
             i.icon-keshihua {
                 font-size: 2em;
             }
+
         }
         .title {
             margin-top: 15px;
@@ -842,8 +850,8 @@
                 border: 1px solid #666;
                 border-radius: 5px;
                 &:hover {
-                    border: 1px solid $hover;
-                    background: $hover;
+                    border: 1px solid $tabhover;
+                    background: $tabhover;
                     color: #fff;
                     transition: all .2s linear;
                 }
@@ -871,6 +879,7 @@
         a {
             color: #333;
             text-decoration: none;
+            transition: all 1s;
             &:hover {
                 outline: medium none;
                 /*text-decoration: none;*/
@@ -879,11 +888,17 @@
                     color: #333;
                 }
                 .icon {
-                    border: 1px solid #bbb;
+                    /*border: 1px solid #bbb;*/
                     i {
-                        color: #666
+                        color: #666;
                     }
-                ;
+                }
+                .circle {
+                    border: 2px dashed #333;
+                    -webkit-animation: boderrotate 7s linear infinite;
+                    -moz-animation: boderrotate 7s linear infinite;
+                    -o-animation: boderrotate 7s linear infinite;
+                    animation: boderrotate 7s linear infinite;
                 }
             }
         }
@@ -896,11 +911,20 @@
             text-align: center;
             font-size: 2em;
             border-radius: 50%;
-            border: 1px solid #ddd;
+            /*border: 1px solid #ddd;*/
             i {
                 color: #888;
             }
+            .circle{
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 1px solid #ddd;
+            }
         }
+
+
         .content {
             margin-left: 50px;
             padding: 0 10px;
@@ -941,29 +965,29 @@
                 left: 100%;
                 width: 0;
                 height: 100%;
-                border-bottom: 2px solid $hover;
+                border-bottom: 2px solid $tabhover;
                 transition: all .2s linear;
             }
             &:hover {
-                color: $hover;
+                color: $tabhover;
             }
             &:hover:before {
                 width: 100%;
                 left: 0;
                 top: 0;
                 transition-delay: 0.1s;
-                border-bottom-color: $hover;
+                border-bottom-color: $tabhover;
                 z-index: 1;
             }
             &.active {
-                color: $hover;
+                color: $tabhover;
             }
             &.active:before {
                 width: 100%;
                 left: 0;
                 top: 0;
                 transition-delay: 0.1s;
-                border-bottom-color: $hover;
+                border-bottom-color: $tabhover;
                 z-index: 1;
             }
         }
@@ -1112,14 +1136,14 @@
             }
             &:hover {
                 .contact-icon {
-                    border:1px solid $hover;
-                    background: $hover;
+                    border:1px solid $tabhover;
+                    background: $tabhover;
                     i {
                         color: #fff;
                     }
                 }
                 .contact-msg {
-                    color: $hover;
+                    color: $tabhover;
                 }
             }
         }
@@ -1307,12 +1331,11 @@
                 }
             }
             &:hover {
-                background: rgba(3,150,255 ,.9);
+                background: $hover;//rgba(3,150,255 ,.9);
                 box-shadow: 0 2px 8px $box-shadow-hover;
                 .train-icon {
                     background: #aaa;
                     opacity: 0.3;
-
                 }
                 .train-img {
                     img {
@@ -1353,7 +1376,7 @@
                 .train-theme {
                     .theme-text {
                         a{
-                            color: $hover;
+                            color: $tabhover;
                         }
 
                     }
@@ -1417,7 +1440,7 @@
                     color: rgb(51,51,51);
                     cursor: pointer;
                     &:hover {
-                        color: $hover;
+                        color: $tabhover;
                         text-decoration: none;
                     }
                 }
@@ -1558,9 +1581,9 @@
             font-size: 24px;
         }
         &:hover {
-            background: $hover;
+            background: $fonthover;
             color: #fff;
-            box-shadow: 0 0 3px $hover;
+            box-shadow: 0 0 3px $fonthover;
         }
     }
     .scrollToTop.active {
@@ -1605,6 +1628,20 @@
             }
         }
     }
+
+    @-webkit-keyframes boderrotate{from{-webkit-transform: rotate(0deg)}
+        to{-webkit-transform: rotate(360deg)}
+    }
+    @-moz-keyframes boderrotate{from{-moz-transform: rotate(0deg)}
+        to{-moz-transform: rotate(359deg)}
+    }
+    @-o-keyframes boderrotate{from{-o-transform: rotate(0deg)}
+        to{-o-transform: rotate(359deg)}
+    }
+    @keyframes boderrotate{from{transform: rotate(0deg)}
+        to{transform: rotate(359deg)}
+    }
+
 
     @media screen and (max-width: 768px){
         .banner-wrapper{
