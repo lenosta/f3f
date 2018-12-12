@@ -32,7 +32,7 @@
                                         </div>
                                         <div class="content">
                                             <div class="title">{{item.name}}</div>
-                                            <p>{{item.summary}}</p>
+                                            <p class="tit-p">{{item.summary}}</p>
                                         </div>
                                     </a>
                                 </div>
@@ -900,6 +900,16 @@
                     -o-animation: boderrotate 7s linear infinite;
                     animation: boderrotate 7s linear infinite;
                 }
+                .tit-p{
+                    background-image: -webkit-linear-gradient(left, #2f52d4, #86d0d4 25%, #2f52d4 50%, #86d0d4 75%, #147B96);
+                    color: transparent;
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    background-size: 200% 100%;
+                    /* 动画 */
+                    animation: masked-animation 2s infinite linear;
+                }
+
             }
         }
         .icon {
@@ -1762,5 +1772,14 @@
         }
 
 
+    }
+
+    @keyframes masked-animation {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: -100% 0;
+        }
     }
 </style>
