@@ -854,6 +854,7 @@
                     background: $tabhover;
                     color: #fff;
                     transition: all .2s linear;
+                    box-shadow: 2px 2px 8px 1px #a9a9a9;
                 }
                 a {
                     color: inherit;
