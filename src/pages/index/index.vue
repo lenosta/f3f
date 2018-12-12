@@ -890,11 +890,11 @@
                 .icon {
                     /*border: 1px solid #bbb;*/
                     i {
-                        color: #666;
+                        color: $tabhover;//#666;
                     }
                 }
                 .circle {
-                    border: 2px dashed #333;
+                    border: 2px dashed $tabhover;
                     -webkit-animation: boderrotate 7s linear infinite;
                     -moz-animation: boderrotate 7s linear infinite;
                     -o-animation: boderrotate 7s linear infinite;
