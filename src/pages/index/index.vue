@@ -32,7 +32,7 @@
                                         </div>
                                         <div class="content">
                                             <div class="title">{{item.name}}</div>
-                                            <p class="tit-p">{{item.summary}}</p>
+                                            <p :class="tit_pclass">{{item.summary}}</p>
                                         </div>
                                     </a>
                                 </div>
@@ -250,6 +250,7 @@
     import trainPlan from './train-plan.json'
     import weekly from './technical-weekly.json'
     import subside from './tech-subside.json'
+    import * as jstool from '../../assets/js/utility'
     export default {
         name: 'index',
         data() {
@@ -281,34 +282,43 @@
                 height2: 0,
                 height3: 0,
                 height4: 0,
-                  height5: 0,
+                height5: 0,
                 height6: 0,
-                  scrollTop: 0,
-              //技术沉淀
+                scrollTop: 0,
+                //技术沉淀
                 subsideBtn: [],
                 subsideIndex: 0,
-                subsideArr: []
+                subsideArr: [],
+                isIE: false,
+                tit_pclass: 'tit-p',
             }
         },
         mounted() {
+            this.setIEClass();
             this.initTechCategories();
             this.initTrainPlan();
             this.initWeekly();
             this.initSubside();
             this.initTeam();
-          this.height6 = jQuery("#tech-standard").offset().top;
-          window.addEventListener('scroll',this.handleScroll,true);
-          this.initVanta();
-          jQuery(".main").click(function(){
-            jQuery("[data-target='#bs-example-navbar-collapse-1']").addClass("collapsed").attr("aria-expanded",false);
-            jQuery("#bs-example-navbar-collapse-1").removeClass("in").attr({"aria-expanded":false});
-          })
+            this.height6 = jQuery("#tech-standard").offset().top;
+            window.addEventListener('scroll', this.handleScroll, true);
+            this.initVanta();
+            jQuery(".main").click(function () {
+                jQuery("[data-target='#bs-example-navbar-collapse-1']").addClass("collapsed").attr("aria-expanded", false);
+                jQuery("#bs-example-navbar-collapse-1").removeClass("in").attr({"aria-expanded": false});
+            })
         },
         components: {},
         computed: {
 
         },
         methods: {
+            setIEClass() {
+                this.isIE = jstool.getBrowserType();
+                if (this.isIE != 'webKit') {
+                    this.tit_pclass = 'tit-p-ie';
+                }
+            },
             handleScroll(){
                 this.scrollTop = jQuery(document).scrollTop() ;
                 if( this.scrollTop > 100){
@@ -889,9 +899,8 @@
                     color: #333;
                 }
                 .icon {
-                    /*border: 1px solid #bbb;*/
                     i {
-                        color: $tabhover;//#666;
+                        color: $tabhover; //#666;
                     }
                 }
                 .circle {
@@ -901,8 +910,9 @@
                     -o-animation: boderrotate 7s linear infinite;
                     animation: boderrotate 7s linear infinite;
                 }
-                .tit-p{
+                .tit-p {
                     background-image: -webkit-linear-gradient(left, #2f52d4, #86d0d4 25%, #2f52d4 50%, #86d0d4 75%, #147B96);
+                    /*background-image: -webkit-linear-gradient(left, #b9ffff, #8dffff 20%, #65ffff 40%, #35eaea 60%, #22d4d4 80%, #0eb7b7);*/
                     color: transparent;
                     -webkit-text-fill-color: transparent;
                     -webkit-background-clip: text;
@@ -910,7 +920,10 @@
                     /* 动画 */
                     animation: masked-animation 2s infinite linear;
                 }
-
+                .tit-p-ie {
+                    transition: all .5s;
+                    color: #22d4d4;
+                }
             }
         }
         .icon {
@@ -934,8 +947,6 @@
                 border: 1px solid #ddd;
             }
         }
-
-
         .content {
             margin-left: 50px;
             padding: 0 10px;
@@ -1630,7 +1641,7 @@
             transition: all .3s ease-out;
         }
         &:hover {
-            background: $hover;
+            background: $tabhover;
             .go-to-list-text {
                 top: 0;
             }
@@ -1771,8 +1782,6 @@
                 right: -20px;
             }
         }
-
-
     }
 
     @keyframes masked-animation {

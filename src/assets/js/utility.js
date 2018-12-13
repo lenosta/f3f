@@ -8,3 +8,20 @@ export function getArrayMax(arr) {
   else
     return false
 }
+
+//判断浏览器
+export function getBrowserType() {
+    let userAgent = navigator.userAgent;
+    if (userAgent.indexOf('Trident') > -1) {
+        return 'IE';
+    }
+    else if (userAgent.indexOf('Presto') > -1) // opera内核
+    {
+        return 'opera';
+    }
+    else if (userAgent.indexOf('AppleWebKit') > -1) //苹果、谷歌内核)
+    {
+        return 'webKit';
+    }
+    return 'Other';
+}
