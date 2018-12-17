@@ -33,12 +33,12 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id="nav" class="nav navbar-nav navbar-right">
                         <li class="active">
-                            <a class="navbar-li" href="#home">首页</a>
+                            <a class="navbar-li" href="#home" data-href="home">首页</a>
                             <svg class="ripple-obj" id="js-ripple">
                                 <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
                             </svg>
                         </li>
-                        <li class="active">
+                        <li>
                             <a class="navbar-li" href="#tech-standard" data-href="tech-standard">技术规范</a>
                             <svg class="ripple-obj" id="js-ripple">
                                 <use height="10" width="10" xlink:href="#ripply-scott" class="js-ripple"></use>
@@ -86,7 +86,6 @@
 </template>
 
 <script>
-    import '../static/js/TweenMax.min'
     import rippleAnimation from '../static/js/ripple-confing'
     //  import {init} from '../static/js/ripper'
     export default {
@@ -111,7 +110,7 @@
                     rippleAnimation.call(this, jQuery(this).parent().find("use")[0], event, 0.75);
                     jQuery(this).parent("li").addClass("active").siblings("li").removeClass("active");
                     let targetId = jQuery(this).attr("data-href");
-                    let top = jQuery("#" + targetId).offset().top;
+                    let top = jQuery("#" + targetId).offset().top
                     jQuery("html, body").animate({scrollTop: top}, 1000);
                 })
             }

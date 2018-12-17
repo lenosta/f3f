@@ -1,5 +1,4 @@
 'use strict';
-
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -13,7 +12,8 @@ Object.defineProperty(exports, "__esModule", {
 //     }
 // };
 function rippleAnimation(target, event, timing) {
-    var tl = new TimelineMax();
+    // var tl = new TimelineMax();
+    var tl = new TimelineLite();
     var x = event.offsetX,
         y = event.offsetY,
         w = event.target.offsetWidth,
