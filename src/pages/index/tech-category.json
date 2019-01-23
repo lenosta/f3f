@@ -44,7 +44,7 @@
       ],
       "relativeTechs": [
         {
-          "name": "CSS",
+          "name": "UI 开发",
           "iconClass": "icon-css3",
           "items": [
             {
@@ -66,45 +66,46 @@
             {
               "name": "Ant Design",
               "url": "https://ant.design/"
+            },
+            {
+              "name": "iView",
+              "url": "https://www.iviewui.com"
             }
           ]
         },
         {
-          "name": "JS",
+          "name": "编程语言",
           "iconClass": "icon-js",
           "items": [
             {
-              "name": "jquery",
-              "url": "http://jquery.cuishifeng.cn/"
-            },
-            {
-              "name": "Vue",
-              "url": "https://cn.vuejs.org/"
-            },
-            {
-              "name": "React",
-              "url": "https://github.com/angular/angular.js/"
-            },
-            {
-              "name": "Angular",
-              "url": "https://angularjs.org/"
+              "name": "TypeScript",
+              "url": "https://www.typescriptlang.org"
             },
             {
               "name": "Node.js",
               "url": "http://www.expressjs.com.cn/"
             },
             {
-              "name": "ES6",
-              "url": "http://es6.ruanyifeng.com/"
+              "name": "Lodash",
+              "url": "https://www.lodashjs.com"
             },
             {
-              "name": "requirejs",
-              "url": "http://www.requirejs.cn/"
+              "name": "Moment.js",
+              "url": "http://momentjs.cn"
+            },
+            {
+              "name": "underscore",
+              "url": "https://underscorejs.org"
+            },
+
+            {
+              "name": "ES6",
+              "url": "http://es6.ruanyifeng.com/"
             }
           ]
         },
         {
-          "name": "自动化",
+          "name": "构建部署",
           "iconClass": "icon-zidonghua",
           "items": [
             {
@@ -116,16 +117,42 @@
               "url": "https://www.gulpjs.com.cn/"
             },
             {
-              "name": "Grunt",
-              "url": "https://www.gruntjs.net/"
+              "name": "Parcel",
+              "url": "https://parceljs.org"
             },
             {
               "name": "Travis CI",
               "url": "https://travis-ci.org/"
             },
             {
-              "name": "Selenium",
-              "url": "https://www.seleniumhq.org/docs/"
+              "name": "rollup",
+              "url": "https://www.rollupjs.com/guide/zh"
+            },
+            {
+              "name": "Bower",
+              "url": "https://bower.io"
+            },
+            {
+              "name": "Babel",
+              "url": "https://babel.bootcss.com"
+            }
+          ]
+        },
+        {
+          "name": "前端框架",
+          "iconClass": "icon-weifuwu",
+          "items": [
+            {
+              "name": "Vue",
+              "url": "https://cn.vuejs.org/"
+            },
+            {
+              "name": "React",
+              "url": "https://reactjs.org"
+            },
+            {
+              "name": "Angular",
+              "url": "https://angularjs.org/"
             }
           ]
         },
@@ -138,20 +165,50 @@
               "url": "http://echarts.baidu.com/"
             },
             {
-              "name": "Highcharts",
-              "url": "http://www.hcharts.cn/"
+              "name": "D3",
+              "url": "https://d3js.org/"
+            },
+            {
+              "name": "Three.js",
+              "url": "https://threejs.org/"
+            },
+            {
+              "name": "amCharts",
+              "url": "https://www.amcharts.com"
             },
             {
               "name": "ZRender",
               "url": "https://ecomfe.github.io/zrender-doc/public/"
             },
             {
-              "name": "D3",
-              "url": "https://d3js.org/"
+              "name": "WebGL",
+              "url": "https://www.khronos.org/webgl/"
+            }
+          ]
+        },
+        {
+          "name": "单元测试",
+          "iconClass": "icon-ceshi1",
+          "items": [
+            {
+              "name": "Jest",
+              "url": "https://jestjs.io"
             },
             {
-              "name": "Three",
-              "url": "https://threejs.org/"
+              "name": "Mocha",
+              "url": "https://mochajs.org"
+            },
+            {
+              "name": "AVA",
+              "url": "https://www.npmjs.com/package/ava"
+            },
+            {
+              "name": "chai",
+              "url": "https://www.chaijs.com"
+            },
+            {
+              "name": "Selenium",
+              "url": "https://www.seleniumhq.org/docs/"
             }
           ]
         }

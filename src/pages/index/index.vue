@@ -1517,6 +1517,11 @@
     }
     .show-wrapper {
         min-height: 250px;
+        .content {
+          span {
+            cursor: pointer;
+          }
+        }
     }
     .show-transition {
         transition: all .35s;
