@@ -330,7 +330,7 @@
                 if(0 < this.scrollTop < this.height6){
                 jQuery("#nav li ").eq(0).addClass("active").siblings().removeClass("active");
                 }
-                
+
                 if(this.height6 -200 < this.scrollTop){
                   jQuery("#nav li").eq(1).addClass("active").siblings().removeClass("active");
                   this.height0 = jQuery("#relative-tech").offset().top;
@@ -911,14 +911,15 @@
                     animation: boderrotate 7s linear infinite;
                 }
                 .tit-p {
-                    background-image: -webkit-linear-gradient(left, #2f52d4, #86d0d4 25%, #2f52d4 50%, #86d0d4 75%, #147B96);
+                    /*background-image: -webkit-linear-gradient(left, #1e3239, #4fd4b9 50%, #2f52d4);*/
+                    background-image: -webkit-linear-gradient(left, #049092,#29343d 50%, #049092);
                     /*background-image: -webkit-linear-gradient(left, #b9ffff, #8dffff 20%, #65ffff 40%, #35eaea 60%, #22d4d4 80%, #0eb7b7);*/
                     color: transparent;
                     -webkit-text-fill-color: transparent;
                     -webkit-background-clip: text;
                     background-size: 200% 100%;
                     /* 动画 */
-                    animation: masked-animation 2s infinite linear;
+                    animation: masked-animation 4s infinite linear;
                 }
                 .tit-p-ie {
                     transition: all .5s;
@@ -1789,7 +1790,7 @@
             background-position: 0 0;
         }
         100% {
-            background-position: -100% 0;
+            background-position: -200% 0;
         }
     }
 </style>
