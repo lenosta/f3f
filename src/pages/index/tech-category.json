@@ -164,37 +164,37 @@
         {
           "name": "命名规范",
           "summary": "对常量、变量、类、接口、以及mvc各层代码统一命名风格，规范团队命名习惯，保证代码可读性",
-          "url": "https://jusfoun-fe.github.io/guide/docs/html/code.html",
+          "url": "../../../static/trainPlanDoc/MidEnd development standard.html",
           "iconClass": "icon-wendang"
         },
         {
           "name": "异常日志规范",
           "summary": "建立统一异常处理机制，规范化系统的业务异常处理流程；制定日志规约，明确日志打印的框架、输出路径、各日志级别的使用等，保证开发及运维过程中可快速定位系统问题",
-          "url": "https://jusfoun-fe.github.io/guide/docs/html/code.html",
+          "url": "../../../static/trainPlanDoc/MidEnd development standard.html",
           "iconClass": "icon-yichangrizhi"
         },
         {
           "name": "目录结构规范",
           "summary": "对各个子系统、各个模块、以及mvc层的目录结构进行统一的规范化定义，结合命名规范，保证系统的结构清晰明了，层次分明",
-          "url": "https://jusfoun-fe.github.io/guide/docs/html/code.html",
+          "url": "../../../static/trainPlanDoc/MidEnd development standard.html",
           "iconClass": "icon-biaojiegou"
         },
         {
           "name": "数据库命名规范",
           "summary": "对表、字段、索引的命名制定统一规范，同时对ORM映射、SQL语句的编写做统一要求，保证数据库操作的高效，提高代码层与数据层间的稳定性和健壮性",
-          "url": "https://jusfoun-fe.github.io/guide/docs/html/code.html",
+          "url": "../../../static/trainPlanDoc/MidEnd development standard.html",
           "iconClass": "icon-database"
         },
         {
           "name": "单元测试规范",
           "summary": "团队对开发的功能，要基于AIR原则做好单元测试：即Automatic(自动化)，Independent(独立性)，Repeatable(可重复)原则。要正视单元测试的重要性，保证交付稳定性",
-          "url": "https://jusfoun-fe.github.io/guide/docs/html/code.html",
+          "url": "../../../static/trainPlanDoc/MidEnd development standard.html",
           "iconClass": "icon-ceshi"
         },
         {
           "name": "swagger规范",
           "summary": "使用swagger框架制定前后端交互的接口规范，以此保证前后端分离的模式下，双方团队能有良好的沟通方式和高效的协作性。同时建立swagger自动导出文档机制，高速便捷的积累和沉淀工作成果",
-          "url": "https://jusfoun-fe.github.io/guide/docs/html/code.html",
+          "url": "../../../static/trainPlanDoc/MidEnd development standard.html",
           "iconClass": "icon-daima"
         }
       ],
