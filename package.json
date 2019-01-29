@@ -1,8 +1,8 @@
 {
-  "name": "jusfoun-pc",
+  "name": "f3f",
   "version": "1.0.0",
-  "description": "jusfoun-pc",
-  "author": "jusfoun-fe.github.io",
+  "description": "f3f",
+  "author": "f3f",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
